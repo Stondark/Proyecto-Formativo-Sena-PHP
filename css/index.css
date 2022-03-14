@@ -2,16 +2,21 @@
 
 
 :root{
-
   --purple: #563c9f;
   --pink: #b081f1;
   --blue: #003f9e;
+  --error: #EB5160;
+  --yellow: #FFE66D;
+  --dark: #1a203a;
+  --dark-light: #262b49;
+  --dark-bold: #585d7b;
 }
 
 * {
   font-family: "Lato", sans-serif;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 html{
@@ -563,3 +568,17 @@ html{
   fill: var(--purple);
 }
 
+
+.form-contact > form > input:focus, .form-contact > form > textarea:focus{
+  border: #F5BB00 2px solid;
+}
+
+.error{
+  color: #812020;
+  text-align: center;
+  font-weight: bolder;
+}
+
+#subject.error, #email.error, #phone.error, #mensaje.error{
+  border: var(--error) solid 2px;
+}

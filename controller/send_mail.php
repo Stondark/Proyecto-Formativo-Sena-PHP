@@ -6,17 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-</body>
+
 </html>
 
 
 <?php
 include_once("../views/index.html");
-$phone = $_POST["phone"];
-$email = $_POST["email"];
-$subject = $_POST["subject"];
+$phone = htmlspecialchars($_POST["phone"]);
+$email = htmlspecialchars($_POST["email"]);
+$subject = htmlspecialchars($_POST["subject"]);
 $mensaje = trim((isset($_POST['mensaje'])) ? $_POST['mensaje'] : " ");
 
 use PHPMailer\PHPMailer\PHPMailer;
@@ -60,7 +58,6 @@ try {
     })
     </script>
     <?php
-    /*header("Refresh:1; url=../views/index.html");*/
     exit;
 } catch (Exception $e) {
     ?>

@@ -2,33 +2,43 @@
 
 
 :root{
-
   --purple: #563c9f;
   --pink: #b081f1;
   --blue: #003f9e;
+  --error: #EB5160;
+  --yellow: #FFE66D;
+  --dark: #1a203a;
+  --dark-light: #262b49;
+  --dark-bold: #585d7b;
 }
 
 * {
   font-family: "Lato", sans-serif;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 html{
+  background: var(--dark);
   scroll-behavior: smooth;
 }
-
 .fas{
   margin: 2rem;
   font-size:x-large;
   position: absolute;
-  border: lightgray 3px solid;
+  border: var(--dark-bold) 3px solid;
   border-radius: 2rem;
   padding: 0.3rem;
+  color: var(--pink);
 }
 
 .fas:active{
   color: var(--purple);
+}
+
+.fas:visited{
+  color: var(--pink);
 }
 .container-padre{
   height: auto;
@@ -40,7 +50,6 @@ html{
 
 .container-login{
   width: auto;
-  box-shadow: 0px 0px 36px -5px rgba(0,0,0,0.32);
   margin: 2rem;
   padding: 2rem;
 }
@@ -64,13 +73,14 @@ html{
 .form-container input{
   text-align: center;
   margin: 1em auto;
-  color: #000000;
+  color: var(--dark-bold);
   outline: none;
   border: none;
-  border-bottom: gray  solid 2px;
+  border-bottom: var(--dark-bold) solid 2px;
   padding: 0.5em;
   font-weight: bold;
   width: 92%;
+  background: none;
 }
 
 .form-container input:focus{
@@ -80,7 +90,7 @@ html{
 }
 
 .form-container h1{
-  color: var(--purple);
+  color: #fff;
   font-weight: bolder;
   margin-top: 1rem;
 }
@@ -89,7 +99,7 @@ html{
   width: 100%;
   border: none;
   outline: none;
-  background-color: var(--purple);
+  background-color: var(--pink);
   color: white;
   padding: 0.5rem;
   cursor: pointer;
@@ -97,7 +107,14 @@ html{
 }
 
 .form-container button:hover{
-  background-color: var(--pink);
+  background-color: var(--purple);
   transition: 0.5s;
-  
+}
+
+.form-container button:active{
+  transform: scale(0.9);
+}
+
+.error{
+  color: var(--error) !important;
 }

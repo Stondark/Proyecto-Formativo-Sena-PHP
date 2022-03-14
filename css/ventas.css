@@ -1,0 +1,263 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
+
+
+:root{
+  --purple: #563c9f;
+  --pink: #b081f1;
+  --blue: #003f9e;
+  --error: #EB5160;
+  --yellow: #FFE66D;
+  --dark: #1a203a;
+  --dark-light: #262b49;
+  --dark-bold: #585d7b;
+}
+
+* {
+  font-family: "Lato", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  background: var(--dark);
+  scroll-behavior: smooth;
+}
+
+.container-productos{
+    /*margin-left:  calc(30vh);*/
+    height: 100vh;
+    display: grid;
+    padding: 0 1rem 0 37vh;
+    /*padding-left: 37vh;*/
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 5rem 3rem 1fr 1fr 1fr;
+    justify-items: center;
+    background-color: #1a203a;
+    column-gap: 1rem;
+}
+
+.title{
+    grid-column: 2;
+    grid-row: 2;
+    color: #fff;
+    user-select: none;
+    margin: auto;
+}
+
+.tabla-productos{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    grid-column: 1 / 4;
+    grid-row: 3 / 6;
+}
+
+.tabla-productos table{
+    border-collapse: collapse;
+    color: #fff;
+}
+
+.tabla-productos thead{
+    background: var(--dark-light);
+}
+
+.tabla-productos thead th{
+    padding: 0.7rem;
+}
+
+.tabla-productos thead > tr > th{
+    color: var(--dark-bold);
+    font-size: 0.8rem
+}
+
+.tabla-productos td{
+    padding: 0.6rem;
+}
+
+.tabla-productos tr:nth-child(even){
+    background: var(--dark-light);
+}
+
+.tabla-productos tbody tr td a{
+    text-decoration: none;
+}
+
+.fa-trash-alt{
+    color: var(--error);
+    text-decoration: none;
+    font-size: 1.3rem;
+    margin: 0 0.2rem 0 0;
+
+}
+
+.fa-edit{
+    color: var(--yellow);
+    margin: 0 0 0 0.2rem;
+    text-decoration: none;
+    font-size: 1.3rem;
+}
+
+.button-new{
+    grid-column: 3;
+    grid-row: 2;
+    color: #fff;
+    margin: auto;
+}
+
+.button-new button{
+    height: 40px;
+    width: auto;
+    background: var(--dark-light);
+    border: none;
+    border-radius: 40px;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.button-new button:hover{
+    background: var(--pink);
+    transition: 0.5s;
+}
+
+.button-new button a{
+    color: #fff;
+    outline: none;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 5rem;
+}
+
+.search-container{
+    grid-column: 1;
+    grid-row: 2;
+    background-color: var(--dark-light);
+    height: 40px;
+    border-radius: 40px;
+    padding: 10px;
+}
+
+.search-text{
+    background: none;
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    outline: none;
+} 
+
+.search-btn{
+    float: right;
+}
+
+.fa-trash{
+    color: var(--error);
+}
+
+.fa-pen{
+    color: var(--yellow);
+}
+
+.fa-magnifying-glass{
+    color: #fff;
+}
+
+.status{
+    color: var(--success);
+}
+
+/*! 912 */
+@media screen and (max-width: 912px){
+    .container-productos{
+        padding: 0 1rem 0 17vh;
+    }
+}
+
+
+
+/* NUEVA VENTA */
+.new-producto{
+    padding: 4rem 1rem 0 37vh;
+    grid-column: 3;
+    grid-row: 3 / 5;
+    width: 100%;
+}
+
+.new-producto form{
+    display: grid;
+    grid-template-rows: repeat(6, 1fr);
+    align-items: center;
+    justify-items: center;
+    padding: 0.5rem;
+    width: 100%;
+
+}
+
+.new-producto label, .new-producto button{
+    padding: 0.5rem;
+
+}
+
+.new-producto input{
+    margin: 0.5rem;
+    border: none;
+    border-bottom: var(--dark-bold) 2px solid;
+    width: 80%;
+    background: none;
+    color: #fff;
+    text-align: center;
+}
+
+.new-producto input:focus-visible{
+    outline: none;
+}
+
+.new-producto label{
+    color: var(--dark-bold);
+    font-weight: bold;
+}
+
+.new-producto button{
+    width: 80%;
+    margin: 1rem;
+    color: #fff;
+    background-color: var(--pink);
+    border: none;
+    cursor: pointer;
+    transition: 0.5s;
+    border-radius: 5px;
+    box-shadow: 0px 9px 15px 1px rgba(0,0,0,0.3);
+}
+
+.new-producto button:hover{
+    background-color: var(--purple);
+    transition: 0.5s;
+}
+
+.new-producto select{
+    background: var(--dark);
+    color: #fff;
+    border: none;
+    width: 80%;
+    text-align: center;
+}
+
+.new-producto select::-ms-expand{
+    display: none;
+
+}
+
+.new-producto select:focus-visible{
+    border: none;
+    outline: none;
+}
+
+.new-producto select:hover{
+    cursor: pointer;
+    outline: none;
+}
+
+.error{
+    color: var(--error) !important;
+}
