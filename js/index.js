@@ -28,3 +28,40 @@ if (menu_close) {
   });
 }
 
+
+/* Mostrar modal producto */
+
+const abrir = document.getElementById("abrir-venta");
+const cerrar = document.getElementById("close");
+const modal = document.getElementById("modal-container");
+const key_esc = Event.keyCode;
+
+function modal_cerrar() {
+  modal.style.opacity = "0";
+  modal.style.visibility = "hidden";
+  console.log("Cerrando modal");
+}
+
+if(modal){
+
+  abrir.addEventListener("click", (e) =>{
+    console.log("Mostrando modal");
+    e.preventDefault();
+    modal.style.opacity = "1";
+    modal.style.visibility = "visible";
+  });
+  
+  cerrar.addEventListener("click", () => { 
+    modal_cerrar();
+  });
+
+  window.addEventListener("click", (e) => {
+    if(e.target === modal ){
+      modal_cerrar();
+    } 
+  }); 
+
+}
+
+
+

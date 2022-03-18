@@ -14,10 +14,11 @@
         
     ?>
 </head>
-
 <body>
+    <!-- Contenedor principal -->
     <div class="container-productos">
         <h1 class="title">Productos</h1>
+        <!-- Inicio tabla --->
         <div class="tabla-productos">
             <table id="lista-productos">
                 <thead>
@@ -29,58 +30,40 @@
                         <th>ACCIONES</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <!-- 
-                    <tr>
-                        <td>1</td>
-                        <td>Galletas</td>
-                        <td>500</td>
-                        <td>700</td>
-
-                        <td>
-                            <a href="#">
-                                <i class="fa-solid fa-trash"></i>
-                            </a>
-                            <a href="#">
-                                <i class="fa-solid fa-pen"></i>
-                            </a>
-                            <a href="">
-                                <i class="fa-solid fa-file-pdf"></i>
-                            </a>
-                        </td>
-                        
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Pan</td>
-                        <td>500</td>
-                        <td>700</td>
-
-                        <td>
-                            <a href="#">
-                                <i class="fa-solid fa-trash"></i>
-                            </a>
-                            <a href="#">
-                                <i class="fa-solid fa-pen"></i>
-                            </a>
-                            <a href="">
-                                <i class="fa-solid fa-file-pdf"></i>
-                            </a>
-                        </td>
-
-                    </tr>
--->
-                </tbody>
             </table>
         </div> 
+        <!-- Botón de nueva venta --->
         <div class="button-new">
-            <button>
-                <a href="../views/ventas-new.php">
+            <button id="abrir-venta">
+                <a href="#">
                     Nuevo producto <i class="fa-solid fa-plus"></i>
                 </a>
             </button>
         </div>
     </div>
+
+    <!-- Modal nueva venta -->
+
+    <div class="modal-container" id="modal-container">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Nuevo producto</h2>
+                <a class="close" id="close">X</a>
+            </div>
+            <div class="modal-form">
+                <form action="" method="post" id="form-new-producto">
+                    <label for="">PRODUCTO</label>
+                    <input type="text" id="producto" name="producto">
+                    <label for="">CANTIDAD</label>
+                    <input type="text" id="cantidad" name="cantidad">
+                    <label for="">PRECIO</label>
+                    <input type="text" id="precio" name="precio">
+                    <button>Añadir</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <!-- Jquery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <!-- DataTables --->

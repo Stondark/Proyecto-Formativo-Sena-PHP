@@ -11,11 +11,12 @@
 <body>
     <?php
     require("../model/productos_model.php");
-    $producto = new Producto;
-    $producto->get_producto();
+    
+    /*$producto = new Producto;
+    $producto->get_producto();*/
 
-    /*$connect = new Conexion;
-    $connect->conectar();*/
+    $connect = new Conexion;
+    $connect->conectar();
 
 
     ?>

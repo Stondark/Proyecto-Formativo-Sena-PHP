@@ -151,3 +151,35 @@ $("#form-login").validate({
         }
     }
 });
+
+
+$("#form-new-producto").validate({
+    rules: {
+        producto: {
+            required: true,
+            minlength: 2
+        },
+        cantidad: {
+            required: true,
+            digits: true
+        },
+        precio: {
+            required: true,
+            digits: true
+        }
+    },
+    messages: {
+        producto: {
+            required: "Ingrese un producto válido",
+            minlength: "Ingrese más de 2 carácteres"
+        },
+        cantidad: {
+            required: "Ingrese una cantidad",
+            digits: "Ingrese solo números"
+        },
+        precio: {
+            required: "Ingrese un precio",
+            digits: "Ingrese solo números"
+        }
+    }
+});
