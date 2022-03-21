@@ -34,7 +34,6 @@ if (menu_close) {
 const abrir = document.getElementById("abrir-venta");
 const cerrar = document.getElementById("close");
 const modal = document.getElementById("modal-container");
-const key_esc = Event.keyCode;
 
 function modal_cerrar() {
   modal.style.opacity = "0";
@@ -45,8 +44,8 @@ function modal_cerrar() {
 if(modal){
 
   abrir.addEventListener("click", (e) =>{
-    console.log("Mostrando modal");
     e.preventDefault();
+    console.log("Mostrando modal");
     modal.style.opacity = "1";
     modal.style.visibility = "visible";
   });
@@ -60,6 +59,14 @@ if(modal){
       modal_cerrar();
     } 
   }); 
+
+  document.addEventListener("keydown", (e) => {
+    if(e.key === "Escape"){
+      if(modal.style.opacity === "1"){
+        modal_cerrar();
+      }
+    }
+  });
 
 }
 

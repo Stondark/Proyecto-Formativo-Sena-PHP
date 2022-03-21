@@ -11,7 +11,6 @@ $producto = new Producto();
             echo json_encode($datos);
 
             break;
-
         
     }
 

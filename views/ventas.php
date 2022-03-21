@@ -68,6 +68,8 @@
             </button>
         </div>
     </div>
+    <!-- Sweet Alert-->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- JS Front end-->
     <script src="../js/index.js"></script>
 </body>

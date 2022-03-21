@@ -27,7 +27,7 @@
                         <th>PRODUCTO</th>
                         <th>CANTIDAD</th>
                         <th>PRECIO</th>
-                        <th>ACCIONES</th>
+                        <th></th>
                     </tr>
                 </thead>
             </table>
@@ -68,9 +68,10 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <!-- DataTables --->
     <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/datetime/1.1.2/css/dataTables.dateTime.min.css"></script>
     <!-- Jquery validation lib-->
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>
+    <!-- Sweet Alert-->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- JS -->
     <script src="../js/index.js"></script>
     <script src="../js/productoscript.js"></script>

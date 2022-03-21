@@ -83,24 +83,7 @@ html{
     text-decoration: none;
 }
 
-.dataTables_filter label{
 
-}
-
-.fa-trash-alt{
-    color: var(--error);
-    text-decoration: none;
-    font-size: 1.3rem;
-    margin: 0 0.2rem 0 0;
-
-}
-
-.fa-edit{
-    color: var(--yellow);
-    margin: 0 0 0 0.2rem;
-    text-decoration: none;
-    font-size: 1.3rem;
-}
 
 .h1-prod{
     grid-column: 3;
@@ -140,12 +123,17 @@ html{
     margin: 5rem;
 }
 
+
+#lista-productos > tbody > tr > td> button{
+    background: none;
+    border: none;
+}
 .error{
     color: var(--error) !important;
 }
 
 .fa-pen, .fa-trash, .fa-file-pdf{
-    margin: 0.1rem;
+    cursor: pointer;
 }
 
 .fa-trash{
