@@ -42,6 +42,7 @@
         </div>
     </div>
 
+
     <!-- Modal nueva venta -->
 
     <div class="modal-container" id="modal-container">

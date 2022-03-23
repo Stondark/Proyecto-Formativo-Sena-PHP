@@ -93,6 +93,7 @@ INSERT INTO `productos` (`id`, `producto`, `cantidad`, `precio_venta`) VALUES
 (13, 'Speed Max', 15, 1200),
 (14, 'Coca Cola 1.5', 20, 3000),
 (15, 'Coca Cola 2.5', 10, 5000),
+(16, 'Chocolatina jumbo', 3, 2000)
 (17, 'Menta chao', 24, 200);
 
 -- --------------------------------------------------------
