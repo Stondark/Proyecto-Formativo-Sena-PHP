@@ -20,7 +20,7 @@
         </div>
         <h1 class="title">Ventas</h1>
         <div class="tabla-productos">
-            <table>
+            <table id="tabla-ventas">
                 <thead>
                     <tr>
                         <th>ID</th>
@@ -36,28 +36,6 @@
                         <th>ACCIONES</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>David</td>
-                        <td>3124945351</td>
-                        <td>Cra 78L #42B sur - 85</td>
-                        <td>Galletas</td>
-                        <td>3</td>
-                        <td>Contraentrega</td>
-                        <td>Juanito</td>
-                        <td> <span class="status">Entregado</span> </td>
-                        <td>2100</td>
-                        <td>
-                            <a href="#">
-                                <i class="fa-solid fa-trash"></i>
-                            </a>
-                            <a href="#">
-                                <i class="fa-solid fa-pen"></i>
-                            </a>
-                        </td>
-                    </tr>
-                </tbody>
             </table>
         </div>
         <div class="button-new">
@@ -68,9 +46,17 @@
             </button>
         </div>
     </div>
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!-- DataTables --->
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <!-- Jquery validation lib-->
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>
     <!-- Sweet Alert-->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <!-- JS Front end-->
+    <!-- JS -->
     <script src="../js/index.js"></script>
+    <script src="../js/ventasscript.js"></script>
+    <script src="../libs/jqueryvalidation/validation.js"></script>
 </body>
 </html>

@@ -57,9 +57,10 @@ if(modal){
   window.addEventListener("click", (e) => {
     if(e.target === modal ){
       modal_cerrar();
-    } 
+    }
   }); 
-
+  
+  
   document.addEventListener("keydown", (e) => {
     if(e.key === "Escape"){
       if(modal.style.opacity === "1"){
@@ -67,6 +68,7 @@ if(modal){
       }
     }
   });
+
 
 }
 

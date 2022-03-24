@@ -5,7 +5,7 @@
         protected $host = "localhost";
         protected $db = "crud";
         protected $user = "root";
-        protected $password = "12345";
+        protected $password = "";
         protected $conexion;
 
         public function conectar(){
@@ -21,4 +21,4 @@
         }
     }
 
-?>
+?>  

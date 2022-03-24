@@ -96,7 +96,7 @@ INSERT INTO `productos` (`id`, `producto`, `cantidad`, `precio_venta`) VALUES
 (16, 'Chocolatina jumbo', 3, 2000)
 (17, 'Menta chao', 24, 200);
 
--- --------------------------------------------------------
+-- ---------------w-----------------------------------------
 
 --
 -- Estructura de tabla para la tabla `tipo_envios`

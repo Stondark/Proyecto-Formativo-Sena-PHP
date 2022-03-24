@@ -261,3 +261,84 @@ html{
 .error{
     color: var(--error) !important;
 }
+
+
+/*! DATA TABLES EDIT STYLE */
+
+#lista-productos > tbody > tr.odd{
+    background-color: transparent !important;
+}
+
+.dataTables_filter{
+    margin: 0.5rem;
+}
+
+.dataTables_wrapper .dataTables_filter input{
+    border: none !important;
+    background-color: var(--dark-light) !important;
+    color: #fff !important;
+    border-radius: 40px !important;
+}
+
+.dataTables_wrapper .dataTables_filter input:focus-visible{
+    outline: none;
+}
+
+#lista-productos_filter > label{
+    color: var(--dark-bold) !important; 
+}
+
+#lista-productos_length > label{
+    color: var(--dark-bold) !important;
+}
+
+#lista-productos_length > label > select{
+    border: none;
+    color: #fff;
+    background-color: var(--dark) !important;
+}
+
+#lista-productos_paginate > span > a{
+    color: #fff !important;
+    transition: 00.5s;
+}
+
+#lista-productos_paginate > span > a:hover{
+    background: var(--pink);
+    transition: 0.5s;
+}
+#lista-productos_paginate > span > a.paginate_button.current{
+    background: var(--pink) !important;
+    color: #fff !important;
+    border: none;
+}
+
+#lista-productos_next{
+    color: #fff !important;
+    transition: 0.5s;
+}
+
+#lista-productos_next:hover{
+    background: var(--pink);
+    transition: 0.5s;
+    
+}
+
+#lista-productos_previous{
+    color: #fff !important;
+    transition: 0.5s;
+}
+
+#lista-productos_previous:hover{    
+    background: var(--pink);
+    transition: 0.5s;
+}
+
+
+#lista-productos_length > label > select:focus-visible{
+    border: none;
+    outline: none;
+}
+#lista-productos_info{
+    color: var(--dark-bold);
+}
