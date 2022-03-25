@@ -170,6 +170,7 @@ html{
 
   .menu-icon{
     display: block;
+    padding-right: 1rem;
   }
 
   .close-menu{
