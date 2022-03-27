@@ -12,12 +12,6 @@
 </head>
 <body>
 <div class="container-productos">
-        <div class="search-container">
-            <input type="text" placeholder="Escribe para buscar" class="search-text">
-            <a href="#" class="search-btn">
-                <i class="fa-solid fa-magnifying-glass"></i>
-            </a>
-        </div>
         <h1 class="title">Ventas</h1>
         <div class="tabla-productos">
             <table id="tabla-ventas">
