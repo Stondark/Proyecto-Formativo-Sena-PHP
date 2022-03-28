@@ -30,17 +30,17 @@ $(document).ready(function () {
 
     });
 
-    //get_info_delete("#lista-productos tbody", table);
+    get_info_delete("#tabla-ventas tbody", table);
 });
-/*var get_info_delete = function(tbody, table){
+var get_info_delete = function(tbody, table){
     $(tbody).on("click", "button.delete", function(){
         var data = table.row($(this).parents("tr")).data();
-        var producto = $("#lista-productos #delete").val(data.id);
+        var producto = $("#tabla-ventas #delete").val(data.id);
         console.log(data);
         console.log(producto);
         Swal.fire({
-            title: '¿Está seguro de eliminar el producto?',
-            text: 'El producto ' + data.producto + '(' + data.id +') será eliminado',
+            title: '¿Está seguro de eliminar la venta?',
+            text: 'La venta del cliente ' + data.nombre_cliente + '(' + data.id_venta +') será eliminada',
             icon: 'warning',
             background: '#1a203a',
             color: '#fff',
@@ -53,7 +53,7 @@ $(document).ready(function () {
             if (result.isConfirmed) {
                 Swal.fire({
                     title: '¡Eliminado!',
-                    text: data.producto + ' fue eliminado correctamente',
+                    text: 'La venta del cliente ' + data.nombre_cliente + ' fue eliminado correctamente',
                     icon: 'success',
                     background: '#1a203a',
                     color: '#fff',
@@ -63,4 +63,44 @@ $(document).ready(function () {
         })
     });
 };
-*/
+
+
+const abrir = document.getElementById("abrir-ventas");
+const cerrar = document.getElementById("close");
+const modal_ventas = document.getElementById("modal-container-ventas");
+
+function modal_cerrar() {
+  modal_ventas.style.opacity = "0";
+  modal_ventas.style.visibility = "hidden";
+  console.log("Cerrando modal");
+}
+
+if(modal_ventas){
+  abrir.addEventListener("click", (e) =>{
+    e.preventDefault();
+    console.log("Mostrando modal");
+    modal_ventas.style.opacity = "1";
+    modal_ventas.style.visibility = "visible";
+  });
+
+  cerrar.addEventListener("click", () => {
+    modal_cerrar();
+  });
+
+  window.addEventListener("click", (e) => {
+    if(e.target === modal_ventas ){
+      modal_cerrar();
+    }
+  });
+
+
+  document.addEventListener("keydown", (e) => {
+    if(e.key === "Escape"){
+      if(modal_ventas.style.opacity === "1"){
+        modal_cerrar();
+      }
+    }
+  });
+
+
+}

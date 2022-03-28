@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -11,7 +11,7 @@
     <?php include_once("../includes/nav.php");
 
     ?>
-    
+
 </head>
 
 <body>

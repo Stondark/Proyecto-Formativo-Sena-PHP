@@ -90,7 +90,7 @@ html{
   left:0;
   right: 0;
   bottom: 0;
-  transition: 0.5s ease-out ; 
+  transition: 0.5s ease-out ;
 
 }
 
@@ -148,7 +148,7 @@ html{
   .nav-nav > ul{
     display: flex;
     flex-direction: column;
-    
+
   }
 
   .nav-nav > ul > li {
@@ -177,7 +177,7 @@ html{
     position: absolute;
     right: 24px;
     display: block;
-    
+
   }
 
   .close-menu:hover{
@@ -245,7 +245,7 @@ html{
   /*background: linear-gradient(332deg, rgba(176,129,241,1) 0%, rgba(118,85,189,1) 51%, rgba(86,60,159,1) 100%);*/
   /*background: linear-gradient(273deg, rgba(0,63,158,1) 0%, rgba(58,63,158,1) 36%, rgba(90,63,158,1) 100%);*/
   transition: 1s;
-  box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.363);  
+  box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.363);
 }
 .button-index:hover {
   transform: scale(1.2);
@@ -259,7 +259,7 @@ html{
   width: 100%;
   height: 250px;
   position: absolute;
-  
+
 }
 
 /*! HEADER INFO - RESPONSIVE */
@@ -289,7 +289,7 @@ html{
     /*background: linear-gradient(332deg, rgba(176,129,241,1) 0%, rgba(118,85,189,1) 51%, rgba(86,60,159,1) 100%);*/
     /*background: linear-gradient(273deg, rgba(0,63,158,1) 0%, rgba(58,63,158,1) 36%, rgba(90,63,158,1) 100%);*/
     transition: 1s;
-    box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.363);  
+    box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.363);
   }
   .button-index:hover {
     transform: scale(1.1);
@@ -335,7 +335,7 @@ html{
   border-radius: 0.5rem;
   box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.24);
   padding: 0.5rem;
-  height: 15rem;
+  height: 18rem;
 }
 
 .card1{
@@ -425,7 +425,7 @@ html{
 }
 
 .card4-image{
-  background-image: url(../images/avatar4.png);
+  background-image: url(../images/avatar4.jpg);
   background-size: cover;
   background-position: center;
   width: 40%;
@@ -438,7 +438,7 @@ html{
 
 .card1:hover, .card2:hover, .card3:hover, .card4:hover{
   transform: scale(1.1);
-  transition: 0.5s; 
+  transition: 0.5s;
 }
 
 .card1:active, .card2:active, .card3:active, .card4:active{
@@ -447,24 +447,24 @@ html{
 }
 
 /*! Quiénes somos Responsive */
+
 @media screen and (max-width: 860px){
 
+  .container-card {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 1rem;
+  }
 
-.container-card {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  padding: 1rem;
-}
+  .acerca > h2{
+    position: relative;
+    text-align: center;
+    font-size: 2rem;
+    color: var(--purple);
+    font-weight: bold;
+    margin-top: 1rem;
 
-.acerca > h2{
-  position: relative;
-  text-align: center;
-  font-size: 2rem;
-  color: var(--purple);
-  font-weight: bold;
-  margin-top: 1rem;
-
-}
+  }
 
 }
 
@@ -476,11 +476,11 @@ html{
   }
 
 }
-/*? Contacto */ 
+/*? Contacto */
 
 #contacto{
   position: relative;
-  
+
 }
 
 .container{
@@ -558,7 +558,7 @@ html{
   transform: rotate(180deg);
 }
 
-.custom-shape-divider-bottom-1641840117 svg { 
+.custom-shape-divider-bottom-1641840117 svg {
   display: block;
   width: calc(179% + 1.3px);
   height: 200px;

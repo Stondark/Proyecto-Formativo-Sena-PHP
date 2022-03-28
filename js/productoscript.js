@@ -57,3 +57,43 @@ var get_info_delete = function(tbody, table){
         })
     });
 };
+
+const abrir = document.getElementById("abrir-producto");
+const cerrar = document.getElementById("close");
+const modal_productos = document.getElementById("modal-container-productos");
+
+function modal_cerrar() {
+  modal_productos.style.opacity = "0";
+  modal_productos.style.visibility = "hidden";
+  console.log("Cerrando modal");
+}
+
+if(modal_productos){
+  abrir.addEventListener("click", (e) =>{
+    e.preventDefault();
+    console.log("Mostrando modal");
+    modal_productos.style.opacity = "1";
+    modal_productos.style.visibility = "visible";
+  });
+
+  cerrar.addEventListener("click", () => {
+    modal_cerrar();
+  });
+
+  window.addEventListener("click", (e) => {
+    if(e.target === modal_productos ){
+      modal_cerrar();
+    }
+  });
+
+
+  document.addEventListener("keydown", (e) => {
+    if(e.key === "Escape"){
+      if(modal_productos.style.opacity === "1"){
+        modal_cerrar();
+      }
+    }
+  });
+
+
+}

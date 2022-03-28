@@ -11,9 +11,11 @@
     <?php include_once("../includes/nav.php"); ?>
 </head>
 <body>
+
 <div class="container-productos">
         <h1 class="title">Ventas</h1>
         <div class="tabla-productos">
+          <!-- Inicio tabla -->
             <table id="tabla-ventas">
                 <thead>
                     <tr>
@@ -31,14 +33,37 @@
                     </tr>
                 </thead>
             </table>
+            <!-- Fin tabla -->
         </div>
         <div class="button-new">
-            <button>
+            <button id="abrir-ventas">
                 <a href="../views/ventas-new.php">
                     Nueva venta <i class="fa-solid fa-plus"></i>
                 </a>
             </button>
         </div>
+        <!-- Modal -->
+        <div class="modal-container" id="modal-container-ventas">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Nueva venta</h2>
+                    <a class="close" id="close">X</a>
+                </div>
+                <div class="modal-form">
+                    <form action="" method="post" id="form-new-producto">
+                        <label for="">PRODUCTO</label>
+                        <input type="text" id="producto" name="producto">
+                        <label for="">CANTIDAD</label>
+                        <input type="text" id="cantidad" name="cantidad">
+                        <label for="">PRECIO</label>
+                        <input type="text" id="precio" name="precio">
+                        <button>Añadir</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- Fin modal -->
+
     </div>
     <!-- Jquery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>

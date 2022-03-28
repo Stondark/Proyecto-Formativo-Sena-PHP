@@ -11,7 +11,7 @@
     <title>Productos</title>
     <!-- Include nav -->
     <?php include_once("../includes/nav.php");
-        
+
     ?>
 </head>
 <body>
@@ -31,10 +31,10 @@
                     </tr>
                 </thead>
             </table>
-        </div> 
+        </div>
         <!-- Botón de nueva venta --->
         <div class="button-new">
-            <button id="abrir-venta">
+            <button id="abrir-producto">
                 <a href="#">
                     Nuevo producto <i class="fa-solid fa-plus"></i>
                 </a>
@@ -45,7 +45,7 @@
 
     <!-- Modal nueva venta -->
 
-    <div class="modal-container" id="modal-container">
+    <div class="modal-container" id="modal-container-productos">
         <div class="modal-content">
             <div class="modal-header">
                 <h2>Nuevo producto</h2>
