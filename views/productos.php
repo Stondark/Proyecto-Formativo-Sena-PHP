@@ -76,7 +76,7 @@
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- JS -->
     <script src="../js/index.js"></script>
-    <script src="../js/productoscript.js"></script>
+    <script src="../js/productos-script.js"></script>
     <script src="../libs/jqueryvalidation/validation.js"></script>
 </body>
 
