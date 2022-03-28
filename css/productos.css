@@ -101,7 +101,7 @@ html{
 
 .button-new button{
     height: 40px;
-    width: 13rem ;
+    width: auto;
     background: var(--dark-light);
     border: none;
     border-radius: 40px;
@@ -120,6 +120,7 @@ html{
     text-decoration: none;
     font-size: 1rem;
     font-weight: bold;
+    margin: 5rem;
 }
 
 
@@ -174,7 +175,7 @@ html{
 }
 
 #lista-productos_filter > label{
-    color: var(--dark-bold) !important;
+    color: var(--dark-bold) !important; 
 }
 
 #lista-productos_length > label{
@@ -210,7 +211,7 @@ html{
 #lista-productos_next:hover{
     background: var(--pink);
     transition: 0.5s;
-
+    
 }
 
 #lista-productos_previous{
@@ -218,7 +219,7 @@ html{
     transition: 0.5s;
 }
 
-#lista-productos_previous:hover{
+#lista-productos_previous:hover{    
     background: var(--pink);
     transition: 0.5s;
 }
@@ -239,7 +240,7 @@ html{
     }
 }
 
-/*! MODAL NUEVA PRODUCTOS */
+/*! MODAL NUEVA VENTA */
 
 
 .modal-container{
