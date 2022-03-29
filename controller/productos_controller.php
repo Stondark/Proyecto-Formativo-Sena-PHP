@@ -1,8 +1,7 @@
 <?php
 
-    //require_once("../config/db.php");
 require_once("../model/productos_model.php");
-$producto = new Producto();
+$producto = new Producto(); // Instancia de la clase Producto
 
     switch($_GET["op"]){
         case "listar":
