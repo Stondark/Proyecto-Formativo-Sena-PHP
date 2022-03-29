@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="descripción" content="Una tabla de productos">
     <!-- CSS -->
-    <link rel="stylesheet" href="../css/productos.css" />
+    <link rel="stylesheet" href="../css/productos.css">
     <link rel="stylesheet" href="//cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
     <title>Productos</title>
     <!-- Include nav -->
@@ -72,8 +73,6 @@
     <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
     <!-- Jquery validation lib-->
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>
-    <!-- Sweet Alert-->
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- JS -->
     <script src="../js/index.js"></script>
     <script src="../js/productos-script.js"></script>
