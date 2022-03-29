@@ -71,6 +71,7 @@ var get_info_delete = function(tbody, table){
             }).then((result) => {
                 if (result.isConfirmed) {
                     eliminar_producto(id_producto);
+                    table.ajax.reload();
                 }
             })
         }
