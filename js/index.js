@@ -1,5 +1,3 @@
-/*! */
-
 /* Mostrar menú */
 const nav_menu = document.getElementById("nav-menu"),
   show_menu = document.getElementById("show-menu"),
@@ -30,6 +28,7 @@ if (menu_close) {
 
 
 /* Mostrar modal producto */
+
 
 const abrir = document.getElementById("abrir-venta");
 const cerrar = document.getElementById("close");

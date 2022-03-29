@@ -52,7 +52,6 @@ var get_info_delete = function(tbody, table){
                     background: '#1a203a',
                     color: '#fff',
                 })
-
             }
         })
     });
