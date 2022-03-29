@@ -26,33 +26,55 @@ $(document).ready(function () {
 
     get_info_delete("#lista-productos tbody", table);
 });
+
 var get_info_delete = function(tbody, table){
     $(tbody).on("click", "button.delete", function(){
         var data = table.row($(this).parents("tr")).data();
         var producto = $("#lista-productos #delete").val(data.id);
+        var id_producto = data.id;
         console.log(data);
         console.log(producto);
-        Swal.fire({
-            title: '¿Está seguro de eliminar el producto?',
-            text: 'El producto ' + data.producto + '(' + data.id +') será eliminado',
-            icon: 'warning',
-            background: '#1a203a',
-            color: '#fff',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#EB5160',
-            cancelButtonText: 'Cancelar',
-            confirmButtonText: 'Sí, elimínalo'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                Swal.fire({
-                    title: '¡Eliminado!',
-                    text: data.producto + ' fue eliminado correctamente',
-                    icon: 'success',
-                    background: '#1a203a',
-                    color: '#fff',
-                })
-            }
-        })
+
+        alerta_eliminar(id_producto);
+
+        function eliminar_producto(id_producto) {
+            
+            parametros = { "id":id_producto }
+            $.ajax({
+                data: parametros,
+                url: '../controller/productos_controller.php?op=eliminar',
+                type: 'POST',
+                success:function(){
+                    Swal.fire({
+                        title: '¡Eliminado!',
+                        text: data.producto + ' fue eliminado correctamente',
+                        icon: 'success',
+                        background: '#1a203a',
+                        color: '#fff',
+                    })
+                }
+            })
+        }
+
+        function alerta_eliminar(id_producto) {
+            Swal.fire({
+                title: '¿Está seguro de eliminar el producto?',
+                text: 'El producto ' + data.producto + '(' + data.id +') será eliminado',
+                icon: 'warning',
+                background: '#1a203a',
+                color: '#fff',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#EB5160',
+                cancelButtonText: 'Cancelar',
+                confirmButtonText: 'Sí, elimínalo'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    eliminar_producto(id_producto);
+                }
+            })
+        }
+        /*** */
     });
 };
+

@@ -12,7 +12,12 @@ $producto = new Producto();
 
             break;
         
-        
+        case "eliminar":
+
+            if(isset($_POST['id']))
+                $producto->delete_producto($_POST['id']);
+
+            break;
     }
 
 
