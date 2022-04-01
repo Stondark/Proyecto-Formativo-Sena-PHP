@@ -1,23 +1,29 @@
-console.log("Jquery validation its run");
+jQuery.validator.addMethod("noSpace", function(value, element) { 
+    return value == '' || value.trim().length != 0;  
+  }, "Los espacios  no son válidos");
 
 $("#form-contact").validate({
         rules: {
             subject: {
                 required: true,
                 minlength: 3,
+                noSpace: true
             },
             email: {
                 required: true,
                 email: true,
+                noSpace: true
             }, 
             phone: {
                 required: true,
                 digits: true,
+                noSpace: true
             }, 
             mensaje: {
                 required: true,
                 minlength: 3,
                 maxlength: 200,
+                noSpace: true
             },
         },
         messages:{
@@ -46,15 +52,18 @@ $("#new-producto").validate({
     rules: {
         producto: {
             required: true,
-            minlength: 3
+            minlength: 3,
+            noSpace: true
         },
         cantidad: {
             required: true,
-            digits: true
+            digits: true,
+            noSpace: true
         },
         precio: {
             required: true,
             digits: true,
+            noSpace: true
         }
     }, 
     messages: {
@@ -78,27 +87,33 @@ $("#new-venta").validate({
     rules: {
         nombre: {
             required: true,
-            minlength: 3
+            minlength: 3,
+            noSpace: true
         }, 
         numero: {
             required: true,
-            digits: true
+            digits: true,
+            noSpace: true
         }, 
         direccion: {
             required: true,
-            minlength: 3
+            minlength: 3,
+            noSpace: true
         }, 
         productos: {
             required: true,
-            minlength: 3
+            minlength: 3,
+            noSpace: true
         }, 
         cantidad: {
             required: true,
-            digits: true
+            digits: true,
+            noSpace: true
         },
         total: {
             required: true,
-            digits: true
+            digits: true,
+            noSpace: true
         }
     },
     messages: {
@@ -133,11 +148,13 @@ $("#form-login").validate({
     rules: {
         user: {
             required: true,
-            minlength: 3
+            minlength: 3,
+            noSpace: true
         }, 
         password: {
             required: true,
-            minlength: 3
+            minlength: 3,
+            noSpace: true
         }
     }, 
     messages: {
@@ -157,15 +174,18 @@ $("#form-new-producto").validate({
     rules: {
         producto: {
             required: true,
-            minlength: 2
+            minlength: 2,
+            noSpace: true
         },
         cantidad: {
             required: true,
-            digits: true
+            digits: true,
+            noSpace: true
         },
         precio: {
             required: true,
-            digits: true
+            digits: true,
+            noSpace: true
         }
     },
     messages: {

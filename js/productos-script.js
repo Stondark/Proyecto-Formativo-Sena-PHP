@@ -36,7 +36,7 @@ var get_info_delete = function(tbody, table){
 /* Petición ajax para eliminar el producto */
 
         function eliminar_producto(id_producto) {
-            parametros = { "id":id_producto }
+            let parametros = { "id":id_producto }
             $.ajax({
                 data: parametros,
                 url: '../controller/productos_controller.php?op=eliminar',

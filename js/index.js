@@ -69,5 +69,22 @@ if(modal){
 
 }
 
+// Evitar espacios login 
+const user = document.getElementById("user");
+const password = document.getElementById("password");
 
+if(user){
+  user.addEventListener("keyup", (e) =>{
+    var ta =   $("#user");
+    letras =   ta.val().replace(/ /g, "");
+    ta.val(letras)
+  });
+
+  password.addEventListener("keyup", (e) =>{
+    var ta =   $("#password");
+    letras =   ta.val().replace(/ /g, "");
+    ta.val(letras)
+  });
+
+}
 

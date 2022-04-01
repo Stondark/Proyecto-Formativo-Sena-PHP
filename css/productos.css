@@ -62,7 +62,7 @@
 
 .button-new button{
     height: 40px;
-    width: auto;
+    width: 10rem;
     background: var(--dark-light);
     border: none;
     border-radius: 40px;
@@ -81,7 +81,7 @@
     text-decoration: none;
     font-size: 1rem;
     font-weight: bold;
-    margin: 5rem;
+
 }
 
 

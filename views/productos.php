@@ -28,7 +28,7 @@
                         <th>PRODUCTO</th>
                         <th>CANTIDAD</th>
                         <th>PRECIO</th>
-                        <th></th>
+                        <th><!-- Botones editar y eliminar--></th>
                     </tr>
                 </thead>
             </table>
@@ -42,8 +42,7 @@
             </button>
         </div>
     </div>
-
-
+    
     <!-- Modal nueva venta -->
 
     <div class="modal-container" id="modal-container">
