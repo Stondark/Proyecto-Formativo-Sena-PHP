@@ -1,34 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
-
-
-:root{
-  --purple: #563c9f;
-  --pink: #b081f1;
-  --blue: #003f9e;
-  --error: #EB5160;
-  --yellow: #FFE66D;
-  --dark: #1a203a;
-  --dark-light: #262b49;
-  --dark-bold: #585d7b;
-}
-
-* {
-  font-family: "Lato", sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html{
-  background: var(--dark);
-  scroll-behavior: smooth;
-}
-
-.container-productos{
+.container-ventas{
     /*margin-left:  calc(30vh);*/
     height: 100vh;
     display: grid;
-    padding: 0 10rem 0 65vh;
+    padding: 0 1rem 0 37vh;
     /*padding-left: 37vh;*/
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 5rem 3rem 1fr 1fr 1fr;
@@ -45,58 +19,38 @@ html{
     margin: auto;
 }
 
-.tabla-productos{
+.tabla-ventas{
     display: flex;
     flex-direction: column;
     text-align: center;
+    align-items: center;
     width: 100%;
     grid-column: 1 / 4;
     grid-row: 3 / 6;
 }
 
-.tabla-productos table{
-    border-collapse: collapse;
+.tabla-ventas table{
     color: #fff;
 }
 
-.tabla-productos thead{
+.tabla-ventas thead{
     background: var(--dark-light);
 }
 
-.tabla-productos thead th{
-    padding: 0.7rem;
-}
 
-.tabla-productos thead > tr > th{
+.tabla-ventas thead > tr > th{
     color: var(--dark-bold);
-    font-size: 0.8rem
 }
 
-.tabla-productos td{
-    padding: 0.6rem;
-}
-
-.tabla-productos tr:nth-child(even){
+.tabla-ventas tr:nth-child(even){
     background: var(--dark-light);
 }
 
-.tabla-productos tbody tr td a{
-    text-decoration: none;
-}
-
-.fa-trash-alt{
-    color: var(--error);
-    text-decoration: none;
-    font-size: 1.3rem;
-    margin: 0 0.2rem 0 0;
-
-}
-
-.fa-edit{
-    color: var(--yellow);
-    margin: 0 0 0 0.2rem;
-    text-decoration: none;
-    font-size: 1.3rem;
+.h1-prod{
+    grid-column: 3;
+    grid-row: 2;
+    color: #fff;
+    margin: auto;
 }
 
 .button-new{
@@ -108,15 +62,12 @@ html{
 
 .button-new button{
     height: 40px;
-    width: 13rem;
+    width: 10rem;
     background: var(--dark-light);
     border: none;
     border-radius: 40px;
     transition: 0.5s;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .button-new button:hover{
@@ -130,27 +81,20 @@ html{
     text-decoration: none;
     font-size: 1rem;
     font-weight: bold;
+
 }
 
-.search-container{
-    grid-column: 1;
-    grid-row: 2;
-    background-color: var(--dark-light);
-    height: 40px;
-    border-radius: 40px;
-    padding: 10px;
-}
 
-.search-text{
+#lista-ventas > tbody > tr > td> button{
     background: none;
     border: none;
-    color: #fff;
-    font-weight: bold;
-    outline: none;
-} 
+}
+.error{
+    color: var(--error) !important;
+}
 
-.search-btn{
-    float: right;
+.fa-pen, .fa-trash{
+    cursor: pointer;
 }
 
 .fa-trash{
@@ -161,113 +105,25 @@ html{
     color: var(--yellow);
 }
 
-.fa-magnifying-glass{
-    color: #fff;
-}
-
-.status{
+.entregado{
     color: var(--success);
 }
 
-/*! 912 */
-@media screen and (max-width: 912px){
-    .container-productos{
-        padding: 0 1rem 0 17vh;
-    }
+.espera{
+    color: var(--yellow);
 }
 
-
-
-/* NUEVA VENTA */
-.new-producto{
-    padding: 4rem 1rem 0 37vh;
-    grid-column: 3;
-    grid-row: 3 / 5;
-    width: 100%;
+.cancelado{
+    color: var(--error);
 }
 
-.new-producto form{
-    display: grid;
-    grid-template-rows: repeat(6, 1fr);
-    align-items: center;
-    justify-items: center;
-    padding: 0.5rem;
-    width: 100%;
-
-}
-
-.new-producto label, .new-producto button{
-    padding: 0.5rem;
-
-}
-
-.new-producto input{
-    margin: 0.5rem;
-    border: none;
-    border-bottom: var(--dark-bold) 2px solid;
-    width: 80%;
-    background: none;
-    color: #fff;
-    text-align: center;
-}
-
-.new-producto input:focus-visible{
-    outline: none;
-}
-
-.new-producto label{
-    color: var(--dark-bold);
+.entregado, .cancelado, .espera{
     font-weight: bold;
 }
 
-.new-producto button{
-    width: 80%;
-    margin: 1rem;
-    color: #fff;
-    background-color: var(--pink);
-    border: none;
-    cursor: pointer;
-    transition: 0.5s;
-    border-radius: 5px;
-    box-shadow: 0px 9px 15px 1px rgba(0,0,0,0.3);
-}
-
-.new-producto button:hover{
-    background-color: var(--purple);
-    transition: 0.5s;
-}
-
-.new-producto select{
-    background: var(--dark);
-    color: #fff;
-    border: none;
-    width: 80%;
-    text-align: center;
-}
-
-.new-producto select::-ms-expand{
-    display: none;
-
-}
-
-.new-producto select:focus-visible{
-    border: none;
-    outline: none;
-}
-
-.new-producto select:hover{
-    cursor: pointer;
-    outline: none;
-}
-
-.error{
-    color: var(--error) !important;
-}
-
-
 /*! DATA TABLES EDIT STYLE */
 
-#tabla-ventas > tbody > tr.odd{
+#lista-ventas > tbody > tr.odd{
     background-color: transparent !important;
 }
 
@@ -286,72 +142,157 @@ html{
     outline: none;
 }
 
-#tabla-ventas_filter > label{
+#lista-ventas_filter > label{
     color: var(--dark-bold) !important; 
 }
 
-#tabla-ventas_length > label{
+#lista-ventas_length > label{
     color: var(--dark-bold) !important;
 }
 
-#tabla-ventas_length > label > select{
+#lista-ventas_length > label > select{
     border: none;
     color: #fff;
     background-color: var(--dark) !important;
 }
 
-#tabla-ventas_paginate > span > a{
+#lista-ventas_paginate > span > a{
     color: #fff !important;
     transition: 00.5s;
 }
 
-#tabla-ventas_paginate > span > a:hover{
+#lista-ventas_paginate > span > a:hover{
     background: var(--pink);
     transition: 0.5s;
 }
-#tabla-ventas_paginate > span > a.paginate_button.current{
+#lista-ventas_paginate > span > a.paginate_button.current{
     background: var(--pink) !important;
     color: #fff !important;
     border: none;
 }
 
-#tabla-ventas_next{
+#lista-ventas_next{
     color: #fff !important;
     transition: 0.5s;
 }
 
-#tabla-ventas_next:hover{
+#lista-ventas_next:hover{
     background: var(--pink);
     transition: 0.5s;
     
 }
 
-#tabla-ventas_previous{
+#lista-ventas_previous{
     color: #fff !important;
     transition: 0.5s;
 }
 
-#tabla-ventas_previous:hover{    
+#lista-ventas_previous:hover{    
     background: var(--pink);
     transition: 0.5s;
 }
 
 
-#tabla-ventas_length > label > select:focus-visible{
+#lista-ventas_length > label > select:focus-visible{
     border: none;
     outline: none;
 }
-#tabla-ventas_info{
+#lista-ventas_info{
     color: var(--dark-bold);
 }
 
-#tabla-ventas > tbody > tr > td> button{
-    background: none;
-    border: none;
+/*! 912 */
+@media screen and (max-width: 912px){
+    .container-ventas{
+        padding: 0 1rem 0 17vh;
+    }
 }
 
-#tabla-ventas_filter {
+/*! MODAL NUEVA VENTA */
+
+
+.modal-container{
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.3);
     display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+}
+
+.modal-content{
+    width: 40%;
+    height: 50%;
+    background: var(--dark);
+    box-shadow: 0px 0px 50px -8px rgba(0,0,0,0.8);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: auto;
+    border-radius: 3px 3px 3px 20px;
+}
+
+.modal-form > form{
+    display: grid;
+    justify-items: center;
+}
+
+.modal-form > form > label{
+    color: var(--dark-bold);
+}
+.modal-form > form > label, .modal-form > form > input, .modal-form > form > button{
+    margin: 0.5rem;
+}
+
+.modal-form input{
+    background: none;
+    border: none;
+    border-bottom: 2px solid var(--dark-light);
+    color: #fff;
+}
+
+.modal-form button{
+    width: 100%;
+    background-color: var(--dark-light);
+    color: #fff;
+    border: none;
+    border-radius: 40px;
+    padding: 0.5rem;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.modal-form button:hover{
+    background-color: var(--pink);
+    transition: 0.5s;
+}
+
+.modal-form input:focus-visible{
+    outline: none;
+}
+
+.modal-header{
+    display: flex;
+    align-items: center;
+}
+
+.modal-header > a, .modal-header > h2{
+    margin: 0.5rem;
+    color: #fff;
+}
+
+.modal-header > a{
+    top: 0;
+    right: 0;
+    position: absolute;
+    cursor: pointer;
+    font-weight: bold;
 }

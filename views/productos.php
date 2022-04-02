@@ -35,7 +35,7 @@
         </div> 
         <!-- Botón de nueva venta --->
         <div class="button-new">
-            <button id="abrir-venta">
+            <button id="abrir-producto">
                 <a href="#">
                     Nuevo producto <i class="fa-solid fa-plus"></i>
                 </a>

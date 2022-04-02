@@ -3,7 +3,7 @@
     class Ventas extends Conexion{
         public function get_ventas(){
             parent::conectar();
-            $sql = "SELECT * FROM ventas";
+            $sql = "SELECT v.id_venta, v.nombre_cliente, v.numero, v.direccion, p.producto, v.cantidad, t.tipo_envio, u.nombre, e.estado, v.total FROM ventas v INNER JOIN productos p ON v.producto = p.id INNER JOIN tipo_envios t ON v.id_tipoenvio = t.id_tipoenvio INNER JOIN usuarios u ON v.id_vendedor = u.id_usuario INNER JOIN estado_envio e ON v.id_estado = e.id_estado;";
             $consulta = $this->conexion->prepare($sql);
             $consulta->execute();
             $resultado = $consulta->fetchAll(PDO::FETCH_ASSOC);
@@ -84,5 +84,3 @@
         }
 
     }
-
-?>

@@ -2,8 +2,7 @@
 const nav_menu = document.getElementById("nav-menu"),
   show_menu = document.getElementById("show-menu"),
   close_menu = document.getElementById("close-menu");
-
-
+  
 if(nav_menu){
   show_menu.addEventListener("click", () => {
     nav_menu.classList.toggle("show");
@@ -14,9 +13,7 @@ if(nav_menu){
   });
 }
 
-
 /* Mostrar sign-out */
-
 const menu_close = document.getElementById("menu-close"),
   user_name = document.getElementById("user-name");
 
@@ -26,11 +23,8 @@ if (menu_close) {
   });
 }
 
-
 /* Mostrar modal producto */
-
-
-const abrir = document.getElementById("abrir-venta");
+const abrir = document.getElementById("abrir-producto");
 const cerrar = document.getElementById("close");
 const modal = document.getElementById("modal-container");
 
