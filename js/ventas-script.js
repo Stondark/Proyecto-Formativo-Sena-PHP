@@ -27,13 +27,12 @@ $(document).ready(function () {
                             return "<span class='cancelado'>"+data+"</span>";    
                         case "En proceso":
                             return "<span class='espera'>"+data+"</span>";
-                    
                     }
                 }
             },
             {data: "total"},
             {data: null,
-                defaultContent: "<button class='delete' id='delete' value=''><i class='fa-solid fa-trash'></i></button> <button class='edit'><i class='fa-solid fa-pen'></i></button>" ,
+                defaultContent: "<button class='delete' id='delete' value=''><i class='fa-solid fa-trash'></i></button> <button class='edit'><i class='fa-solid fa-pen'></i></button> <button class='pdf'><i class='fa-solid fa-file-pdf'></i></button>" ,
                 orderable: false,
             }
         ],

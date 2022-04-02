@@ -93,7 +93,7 @@
     color: var(--error) !important;
 }
 
-.fa-pen, .fa-trash{
+.fa-pen, .fa-trash, .fa-file-pdf{
     cursor: pointer;
 }
 
@@ -115,6 +115,10 @@
 
 .cancelado{
     color: var(--error);
+}
+
+.fa-file-pdf{
+    color: var(--success);
 }
 
 .entregado, .cancelado, .espera{
@@ -199,6 +203,10 @@
 }
 #lista-ventas_info{
     color: var(--dark-bold);
+}
+
+table.dataTable tbody th, table.dataTable tbody td {
+    padding: 5px !important;
 }
 
 /*! 912 */
