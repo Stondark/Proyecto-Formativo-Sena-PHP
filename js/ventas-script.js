@@ -41,4 +41,55 @@ $(document).ready(function () {
 
     });
 
+    get_info_delete("#lista-ventas tbody", table);
 });
+/* Función para el botón eliminar */
+var get_info_delete = function(tbody, table){
+    $(tbody).on("click", "button.delete", function(){
+        var data = table.row($(this).parents("tr")).data();
+        var ventas = $("#lista-ventas #delete").val(data.id_venta);
+        var id_deventa = data.id_venta;
+        alerta_eliminar(id_deventa);
+
+/* Petición ajax para eliminar la venta */
+
+        function eliminar_producto(id_deventa) {
+            let parametros = { "id_venta":id_deventa }
+            $.ajax({
+                data: parametros,
+                url: '../controller/ventas_controller.php?op=eliminar',
+                type: 'POST',
+                success:function(){
+                    Swal.fire({
+                        title: '¡Eliminado!',
+                        text: 'La venta de ' + data.nombre_cliente + ' fue eliminada correctamente',
+                        icon: 'success',
+                        background: '#1a203a',
+                        color: '#fff',
+                    })
+                }      
+            })
+        }
+
+/* Función para mostrar la alerta de confirmación */
+        function alerta_eliminar(id_deventa) {
+            Swal.fire({
+                title: '¿Está seguro de eliminar la venta?',
+                text: 'La venta del cliente ' + data.nombre_cliente + '(' + data.id_venta +') será eliminado',
+                icon: 'warning',
+                background: '#1a203a',
+                color: '#fff',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#EB5160',
+                cancelButtonText: 'Cancelar',
+                confirmButtonText: 'Sí, elimínalo'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    eliminar_producto(id_deventa); // Llamado a la petición ajax
+                    table.ajax.reload(); // Recarga de la tabla 
+                }
+            })
+        }
+    });
+};

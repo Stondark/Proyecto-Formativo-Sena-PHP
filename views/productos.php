@@ -33,7 +33,7 @@
                 </thead>
             </table>
         </div> 
-        <!-- Botón de nueva venta --->
+        <!-- Botón de nuevo producto --->
         <div class="button-new">
             <button id="abrir-producto">
                 <a href="#">
@@ -43,7 +43,7 @@
         </div>
     </div>
     
-    <!-- Modal nueva venta -->
+    <!-- Modal nuevo producto -->
 
     <div class="modal-container" id="modal-container">
         <div class="modal-content">

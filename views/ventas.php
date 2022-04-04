@@ -47,6 +47,9 @@
                 </a>
             </button>
         </div>
+
+        <!-- Modal nueva venta --->
+        
     </div>
 
     <!-- Jquery -->

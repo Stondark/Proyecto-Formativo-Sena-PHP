@@ -24,7 +24,7 @@
 
         public function delete_ventas($venta_id){
             parent::conectar();
-            $sql = "DELETE FROM ventas WHERE id = ?";
+            $sql = "DELETE FROM ventas WHERE id_venta = ?";
             $consulta = $this->conexion->prepare($sql);
             $consulta->bindValue(1, $venta_id);
             $consulta->execute();
