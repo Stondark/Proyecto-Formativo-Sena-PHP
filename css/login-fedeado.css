@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
+body{
+    font-family: "Lato", sans-serif;
+    background: #563c9f;
+}
+.form{
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px 5px #00000086;
+}
+.img{
+    background-image: url(../images/home.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.background{background: #312e65;}
+.login{
+    background: white;
+    min-height: 500px;
+}
+.input{
+    outline: none;
+    z-index: 1;
+    border: 1px solid #563c9f;
+    height: 40px;
+    border-radius: 8px;
+}
+.label{top: 8px;transition: all 0.2s ease-in-out;color:#b081f1;}
+.input:valid~.label,.input:focus~.label{top:-25px}
+.titulo{color:#563c9f;}
+.boton{background: #563c9f;color: white;}
+@media (max-width:768px){.login{height: fit-content;}body {background: white;}.return{color: #563c9f;}.form{ box-shadow: none;}}
