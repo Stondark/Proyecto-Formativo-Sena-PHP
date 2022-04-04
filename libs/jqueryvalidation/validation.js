@@ -1,3 +1,5 @@
+console.log("Validation it's running");
+
 jQuery.validator.addMethod("noSpace", function(value, element) { 
     return value == '' || value.trim().length != 0;  
   }, "Los espacios  no son válidos");
@@ -143,32 +145,6 @@ $("#new-venta").validate({
         }
     }
 });
-
-$("#form-login").validate({
-    rules: {
-        user: {
-            required: true,
-            minlength: 3,
-            noSpace: true
-        }, 
-        password: {
-            required: true,
-            minlength: 3,
-            noSpace: true
-        }
-    }, 
-    messages: {
-        user: {
-            required: "Ingrese un usuario válido",
-            minlength: "Ingrese más de 3 carácteres"
-        }, 
-        password: {
-            required: "Ingrese una contraseña válida",
-            minlength: "Ingrese más de 3 carácteres"
-        }
-    }
-});
-
 
 $("#form-new-producto").validate({
     rules: {
