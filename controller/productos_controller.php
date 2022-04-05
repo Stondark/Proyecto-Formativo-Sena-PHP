@@ -16,6 +16,12 @@ $producto = new Producto(); // Instancia de la clase Producto
             }
             break;
         
+        case "add":
+
+            if(isset($_POST['producto']) & isset($_POST['cantidad']) & isset($_POST['precio_venta'])){
+                $producto->insert_producto($_POST['producto'], $_POST['cantidad'], $_POST['precio_venta']);
+            }
+            break;
         default:
             break;
     }

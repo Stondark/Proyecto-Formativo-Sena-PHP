@@ -51,8 +51,8 @@
                 <h2>Nuevo producto</h2>
                 <a class="close" id="close">X</a>
             </div>
-            <div class="modal-form">
-                <form action="" method="post" id="form-new-producto">
+            <div class="modal-form" id="form_productos">
+                <form id="form-new-producto">
                     <label for="">PRODUCTO</label>
                     <input type="text" id="producto" name="producto">
                     <label for="">CANTIDAD</label>

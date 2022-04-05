@@ -27,11 +27,13 @@ if (menu_close) {
 const abrir = document.getElementById("abrir-producto");
 const cerrar = document.getElementById("close");
 const modal = document.getElementById("modal-container");
+const form = document.getElementById("form-new-producto");
 
 function modal_cerrar() {
   modal.style.opacity = "0";
   modal.style.visibility = "hidden";
   console.log("Cerrando modal");
+  form.reset();
 }
 
 if(modal){

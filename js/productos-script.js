@@ -23,8 +23,44 @@ $(document).ready(function () {
 
     });
 
-    get_info_delete("#lista-productos tbody", table);
+    get_info_delete("#lista-productos tbody", table); // Función borrar
+    form_submit(table); // Función añadir
 });
+
+// AÑADIR DATOS
+
+/* Función para añadir datos */
+
+var form_submit = function(table){
+    $("#form-new-producto").submit(function(e){
+        e.preventDefault();
+        var producto_nombre = $("#producto").val();
+        var cantidad = $("#cantidad").val();
+        var precio = $("#precio").val();
+        let parametros = { "producto": producto_nombre, "cantidad": cantidad, "precio_venta": precio}
+        console.log(parametros);
+        $.ajax({
+            data: parametros,
+            url: '../controller/productos_controller.php?op=add',
+            type: 'POST',
+            success: function(){
+                Swal.fire({
+                    title: 'Añadido!',
+                    text: producto_nombre + ' fue añadido correctamente',
+                    icon: 'success',
+                    background: '#1a203a',
+                    color: '#fff',
+                });
+                modal_cerrar();
+                table.ajax.reload();
+            }
+        })
+    })
+}
+
+
+// ELIMINAR DATOS 
+
 /* Función para el botón eliminar */
 var get_info_delete = function(tbody, table){
     $(tbody).on("click", "button.delete", function(){
@@ -43,13 +79,13 @@ var get_info_delete = function(tbody, table){
                 type: 'POST',
                 success:function(){
                     Swal.fire({
-                        title: '¡Eliminado!',
-                        text: data.producto + ' fue eliminado correctamente',
-                        icon: 'success',
-                        background: '#1a203a',
-                        color: '#fff',
+                            title: '¡Borrado con éxito!',
+                            text: data.producto + ' fue borrado con éxito',
+                            icon: 'success',
+                            background: '#1a203a',
+                            color: '#fff',
                     })
-                }
+                },
             })
         }
 
@@ -76,3 +112,4 @@ var get_info_delete = function(tbody, table){
     });
 };
 
+// EDITAR DATOS

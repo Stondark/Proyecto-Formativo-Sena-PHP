@@ -43,6 +43,14 @@ $(document).ready(function () {
 
     get_info_delete("#lista-ventas tbody", table);
 });
+
+/* 
+
+
+
+
+
+
 /* Función para el botón eliminar */
 var get_info_delete = function(tbody, table){
     $(tbody).on("click", "button.delete", function(){
@@ -71,7 +79,7 @@ var get_info_delete = function(tbody, table){
             })
         }
 
-/* Función para mostrar la alerta de confirmación */
+/* Función para mostrar la alerta de confirmación de eliminar */
         function alerta_eliminar(id_deventa) {
             Swal.fire({
                 title: '¿Está seguro de eliminar la venta?',
