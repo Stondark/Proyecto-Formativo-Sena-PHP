@@ -1,4 +1,5 @@
 <?php
+
     require("../config/db.php");
 
     class login extends Conexion{
@@ -11,9 +12,8 @@
             $consulta->bindValue(1,$usuario);
             $consulta->bindValue(2,$contrasena);
             $consulta->execute();
-            $resultado = $consulta->fetchAll(PDO::FETCH_ASSOC);
             if($consulta->rowCount() == 1){
-                
+                $resultado = $consulta->fetchAll(PDO::FETCH_ASSOC);
                 echo json_encode($resultado);
             }
             else{

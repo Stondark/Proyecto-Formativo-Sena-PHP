@@ -1,11 +1,18 @@
 <?php
-
     require_once("../model/login_model.php");
     $login = new Login();
-               
-    echo $_POST['usuario'].$_POST['contrasena'];
 
-    $datos = $login->acesso($_POST['usuario'],$_POST['contrasena']);
+
+    $usuario = $_POST['usuario'];
+    $contrasena = $_POST['contrasena'];
+
+    echo $usuario.$contrasena;
+
+    
+    
+               
+    // //echo $_POST['nombre'].$_POST['edad'];
+    // echo "aljndskjhskjlnfclkws";
 
 
 
