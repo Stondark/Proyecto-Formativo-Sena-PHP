@@ -1,101 +1,82 @@
-/* Mostrar menú */
-const nav_menu = document.getElementById("nav-menu"),
-  show_menu = document.getElementById("show-menu"),
-  close_menu = document.getElementById("close-menu");
-  
-if(nav_menu){
-  show_menu.addEventListener("click", () => {
-    nav_menu.classList.toggle("show");
-  });
+// Validación formulario correo
 
-  close_menu.addEventListener("click", () => {
-    nav_menu.classList.remove("show");
-  });
+const form_contacto = document.getElementById("form-contact-id");
+const inputs_contacto = document.querySelectorAll("#form-contact-id input");
+const text_area = document.querySelectorAll("#form-contact-id textarea");
+const expresiones = {
+    subject: /^[a-zA-Z0-9À-ÿ]{4,16}$/,
+    email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9]+\.[a-zA-Z0-9-.]+$/,
+    phone: /^\d{7,14}$/,
+    message: /^.{4,100}$/
 }
 
-/* Mostrar sign-out */
-const menu_close = document.getElementById("menu-close"),
-  user_name = document.getElementById("user-name");
-
-if (menu_close) {
-  user_name.addEventListener("click", () => {
-    menu_close.classList.toggle("show");
-  });
+const campos = {
+  subject: false,
+  email: false,
+  phone: false,
+  message: false
 }
 
-/* Mostrar modal producto */
-const abrir = document.getElementById("abrir-producto");
-const cerrar = document.getElementById("close");
-const modal = document.getElementById("modal-container");
-const form = document.getElementById("form-new-producto");
+function validar_form(e) {
+  switch (e.target.name) {
+    case "subject": 
+      validar_campo(expresiones.subject, e.target, "subject", "Ingrese un nombre válido");
+      break;
+    case "email":
+      validar_campo(expresiones.email, e.target, "email","Ingrese un correo válido");
+      break
+    case "phone":
+      validar_campo(expresiones.phone, e.target, "phone","Ingrese un número válido");
+      break
+    case "mensaje":
+      validar_campo(expresiones.message, e.target, "message", "Ingrese un mensaje válido");
+      break
+    
+  }
+};
 
-function modal_cerrar() {
-  modal.style.opacity = "0";
-  modal.style.visibility = "hidden";
-  console.log("Cerrando modal");
-  form.reset();
-}
-
-if(modal){
-
-  abrir.addEventListener("click", (e) =>{
-    e.preventDefault();
-    console.log("Mostrando modal");
-    modal.style.opacity = "1";
-    modal.style.visibility = "visible";
-  });
-  
-  cerrar.addEventListener("click", () => { 
-    modal_cerrar();
-  });
-
-  window.addEventListener("click", (e) => {
-    if(e.target === modal ){
-      modal_cerrar();
-    } 
-  }); 
-
-  document.addEventListener("keydown", (e) => {
-    if(e.key === "Escape"){
-      if(modal.style.opacity === "1"){
-        modal_cerrar();
-      }
-    }
-  });
-
-}
-
-// Evitar espacios login 
-const user = document.getElementById("user");
-const password = document.getElementById("password");
-
-if(user){
-  user.addEventListener("keyup", (e) =>{
-    var ta =   $("#user");
-    letras =   ta.val().replace(/ /g, "");
-    ta.val(letras)
-  });
-
-  password.addEventListener("keyup", (e) =>{
-    var ta =   $("#password");
-    letras =   ta.val().replace(/ /g, "");
-    ta.val(letras)
-  });
-
-}
-
-// Saludo login.html 
-
-const login = document.getElementById("form-login");
-
-if(login){
-  var hora = new Date();
-
-  if(hora.getHours() >= 1 & hora.getHours() <= 12){
-    document.getElementById("date").innerHTML = "<h2> Buenos días</h2>"
-  } else if(hora.getHours() > 12 & hora.getHours() <= 18){
-    document.getElementById("date").innerHTML = "<h2> Buenas tardes</h2>"
+function validar_campo(expresion, input, campo,txt) {
+  if (expresion.test(input.value)) {
+    document.getElementById(campo).classList.remove("error");
+    document.getElementById(`error-msg ${campo}`).innerHTML = "";
+    campos[campo] = true;
   } else{
-    document.getElementById("date").innerHTML = "<h2> Buenas noches</h2>"
+    document.getElementById(campo).classList.add("error");
+    document.getElementById(`error-msg ${campo}`).innerHTML = txt;
+    campos[campo] = false;
+  }
+
+  if (campos[campo] && campos.message) {
+    document.getElementById("send_email").disabled = false;
+  } else {
+    document.getElementById("send_email").disabled = true;
   }
 }
+
+
+form_contacto.addEventListener("submit", (e) => {
+  e.preventDefault();
+  if (campos) {
+    Swal.fire({
+      icon: 'success',
+      title: '¡Correo enviado!',
+      text: '¡El correo se envió correctamente!',
+  });
+  } else{
+    Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: '¡Al parecer hay campos incorrectos!',
+    });
+  }
+});
+
+inputs_contacto.forEach((input) => {
+  input.addEventListener("keyup", validar_form);  
+  input.addEventListener("blur", validar_form);  
+});
+
+text_area.forEach((textarea) => {
+  textarea.addEventListener("keyup", validar_form);  
+  textarea.addEventListener("blur", validar_form);  
+});

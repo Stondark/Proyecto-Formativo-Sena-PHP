@@ -27,7 +27,7 @@
                         <th>ID</th>
                         <th>PRODUCTO</th>
                         <th>CANTIDAD</th>
-                        <th>PRECIO</th>
+                        <th>PRECIO</th> 
                         <th><!-- Botones editar y eliminar--></th>
                     </tr>
                 </thead>
@@ -65,17 +65,36 @@
         </div>
     </div>
 
-    <!-- Jquery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <!-- DataTables --->
+    <!-- Modal editar-->
+<!--
+
+    <div class="modal-container" id="modal-container">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Editar producto</h2>
+                <a class="close" id="close">X</a>
+            </div>
+            <div class="modal-form" id="form_productos">
+                <form id="form-new-producto">
+                    <label for="">PRODUCTO</label>
+                    <input type="text" id="producto" name="producto">
+                    <label for="">CANTIDAD</label>
+                    <input type="text" id="cantidad" name="cantidad">
+                    <label for="">PRECIO</label>
+                    <input type="text" id="precio" name="precio">
+                    <button>Añadir</button>
+                </form>
+            </div>
+        </div>
+    </div>
+-->
     <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
     <!-- Jquery validation lib-->
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>
     <!-- JS -->
-    <script src="../js/index.js"></script>
     <script src="../js/productos-script.js"></script>
-    <script src="../libs/jqueryvalidation/validation.js"></script>
+    <script src="../js/app.js"></script>
 </body>
 
 </html>

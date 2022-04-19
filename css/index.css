@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300;1,900&display=swap');
 
 :root{
   --purple: #563c9f;
@@ -10,6 +9,7 @@
   --dark: #1a203a;
   --dark-light: #262b49;
   --dark-bold: #585d7b;
+  --success: #84DD63;
 }
 
 * {
@@ -574,12 +574,21 @@ html{
   border: #F5BB00 2px solid;
 }
 
-.error{
-  color: #812020;
-  text-align: center;
-  font-weight: bolder;
+.success{
+  border: var(--success) solid 2px !important;
 }
 
-#subject.error, #email.error, #phone.error, #mensaje.error{
-  border: var(--error) solid 2px;
+.error{
+  color: var(--error) !important;
+  border: var(--error) solid 2px !important;
+}
+
+.error-msg{
+  text-align: center;
+  color: var(--error);
+}
+
+#send_email:disabled, #send_email[disabled]{
+  background-color: #cccccc;
+  color: #666666;
 }

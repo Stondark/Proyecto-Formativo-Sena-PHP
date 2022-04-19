@@ -3,10 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="descripción" content="Sobre nosotros. Software Y.D.D.D">
+    <meta name="descripción" content="Sobre nosotros. Software Y.D.D.D" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Font Awesome-->
-    <script src="https://kit.fontawesome.com/f003d76e19.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/f003d76e19.js"
+      crossorigin="anonymous"
+    ></script>
     <!-- CSS -->
     <link rel="stylesheet" href="../css/index.css" type="text/css" />
     <title>Inicio</title>
@@ -45,8 +48,7 @@
         </a>
         <nav class="nav-nav" id="nav-menu">
           <span class="close-menu" id="close-menu"
-            ><i class="fas fa-times"></i
-          ></span>
+            ><i class="fas fa-times"></i></span>
           <ul id="menu" class="">
             <li><a href="#inicio">Inicio</a></li>
             <li><a href="#acerca">Acerca</a></li>
@@ -118,50 +120,25 @@
       <div class="container">
         <div class="form-contact">
           <h2>Contáctanos</h2>
-          <form
-            method="post"
-            id="form-contact"
-            action="../controller/send_mail.php"
-            name="form-contact"
-          >
+          <form id="form-contact-id" name="form-contact">
             <input placeholder="Subject" id="subject" name="subject"/>
-            <input
-              type="email"
-              placeholder="E-mail"
-              id="email"
-              name="email"
-            />
-            <input
-              type="tel"
-              placeholder="Phone number"
-              name="phone"
-              id="phone"
-            />
-            <textarea
-              name="mensaje"
-              placeholder="Message"
-              name="mensaje"
-              rows="5"
-              id="mensaje"
-            ></textarea>
-            <button type="submit">Enviar</button>
+            <p id="error-msg subject" class="error-msg"></p>
+            <input type="email" placeholder="E-mail" id="email" name="email"/>
+            <p id="error-msg email" class="error-msg"></p>
+            <input type="tel" placeholder="Phone number" name="phone" id="phone"/>
+            <p id="error-msg phone" class="error-msg"></p>
+            <textarea id="message" name="mensaje" placeholder="Message" rows="5" id="mensaje"></textarea>
+            <p id="error-msg message" class="error-msg"></p>
+            <button id="send_email"type="submit" disabled>Enviar</button>
           </form>
         </div>
       </div>
     </section>
   </body>
-  <!-- Jquery -->
-    <script
-      src="https://code.jquery.com/jquery-3.6.0.min.js"
-      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-      crossorigin="anonymous"
-    ></script>
-    <!-- Jquery validation lib-->
-    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>
-    <!-- Sweet Alert-->
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <!-- JS -->
-    <script src="../js/app.js"></script>
-    <script src="../libs/jqueryvalidation/validation.js"></script>
-    <script src="../js/index.js"></script>
+
+  <!-- JS -->
+  <script src="../js/app.js"></script>
+  <script src="../js/index.js"></script>
+  <!-- Sweet alert -->
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </html>

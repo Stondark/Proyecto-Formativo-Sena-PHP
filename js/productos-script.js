@@ -25,6 +25,7 @@ $(document).ready(function () {
 
     get_info_delete("#lista-productos tbody", table); // Función borrar
     form_submit(table); // Función añadir
+    get_info_edit("#lista-productos tbody", table);
 });
 
 // AÑADIR DATOS
@@ -58,7 +59,6 @@ var form_submit = function(table){
     })
 }
 
-
 // ELIMINAR DATOS 
 
 /* Función para el botón eliminar */
@@ -67,6 +67,7 @@ var get_info_delete = function(tbody, table){
         var data = table.row($(this).parents("tr")).data();
         var producto = $("#lista-productos #delete").val(data.id);
         var id_producto = data.id;
+        console.log(id_producto);
         alerta_eliminar(id_producto);
 
 /* Petición ajax para eliminar el producto */
@@ -113,3 +114,17 @@ var get_info_delete = function(tbody, table){
 };
 
 // EDITAR DATOS
+
+var get_info_edit = function(tbody, table){
+    $(tbody).on("click", "button.edit", function(){
+        var data = table.row($(this).parents("tr")).data();
+        var id = $("#lista-productos #delete").val(data.id);
+            producto = $("#producto").val(data.producto);
+            cantidad = $("#cantidad").val(data.cantidad);
+            precio = $("#precio").val(data.precio_venta);
+
+        modal_abrir();
+
+        //console.log(data);
+    });
+}

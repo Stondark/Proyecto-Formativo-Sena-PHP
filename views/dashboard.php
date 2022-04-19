@@ -34,10 +34,8 @@
             <i class="fas fa-shopping-cart"></i>
         </div>
     </div>
-    <!-- Jquery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <!-- JS Front end-->
-    <script src="../js/index.js"></script>
+    <!-- JS -->
+    <script src="../js/app.js"></script>
 </body>
 
 </html>
