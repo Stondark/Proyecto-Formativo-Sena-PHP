@@ -142,3 +142,9 @@ html {
     color: var(--dark) !important;
     transition: 500ms;
 }
+
+@media screen and (max-width: 750px){
+    .container-imagen{
+        display: none;
+    }
+}
