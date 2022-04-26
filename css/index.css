@@ -371,7 +371,7 @@ html {
 }
 
 .error-msg{
-    color: var(--pink);
+    color: var(--pink) !important;
 }
 
 #send-button:disabled, #send-button[disabled]{
