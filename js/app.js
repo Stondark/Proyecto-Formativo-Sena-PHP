@@ -1,3 +1,18 @@
+// FUNCIONES PARA CHECKEAR EL MODO EN CADA PÁGINA
+var body = document.documentElement;
+
+function check_theme() { // ACÁ VALIDAMOS EL MODO
+    if (localStorage.getItem("light-mode") === "true") {
+        body.classList.toggle("light");
+    }
+    else{
+        body.classList.remove("light");
+    }
+}
+
+check_theme();
+
+
 /* MOSTRAR CIERRE DE SESIÓN  */
 const menu_close = document.getElementById("menu-close"),
     user_name = document.getElementById("user-name");
@@ -8,9 +23,6 @@ if (menu_close) {
     });
 }
 
-// INDEX.HTML 
-
-/* Mostrar menú index */
 
 
 // PRODUCTOS.PHP 
@@ -49,15 +61,15 @@ if (modal) {
 
     window.addEventListener("click", (e) => {
         if (e.target === modal) {
-        modal_cerrar();
+            modal_cerrar();
         }
     });
 
     document.addEventListener("keydown", (e) => {
         if (e.key === "Escape") {
-        if (modal.style.opacity === "1") {
-            modal_cerrar();
-        }
+            if (modal.style.opacity === "1") {
+                modal_cerrar();
+            }
         }
     });
     }

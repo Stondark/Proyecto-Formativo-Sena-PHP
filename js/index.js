@@ -7,26 +7,26 @@ const nav_menu = document.getElementById("nav-menu"),
 show_menu.addEventListener("click", () => {
     nav_menu.classList.toggle("show");
 });
-
+    
 close_menu.addEventListener("click", () => {
     nav_menu.classList.remove("show");
 });
 
 // MODO NOCTURNO DIURNO 
 
+var body = document.documentElement;
 const theme_mode = document.getElementById("switch"); // Botón de cambio de modo
 const sun = document.getElementById("sun");
 const moon = document.getElementById("moon");
-const body = document.documentElement;
 
 theme_mode.addEventListener("click", () =>{
     body.classList.toggle("light");
     change_icon();
 })
 
-change_theme();
+change_theme(); // ACÁ EJECUTAMOS LA FUNCIÓN
 
-function change_icon() {
+function change_icon() { // ACÁ PROGRAMAMOS LA FUNCIÓN PARA CAMBIAR EL ÍCONO DEL INDEX
     if (body.classList.contains("light")) {
         sun.style.display = "none";
         moon.style.display = "block";
@@ -38,7 +38,7 @@ function change_icon() {
     }
 }
 
-function change_theme() { 
+function change_theme() { // ACÁ VALIDAMOS EL MODO
     if (localStorage.getItem("light-mode") === "true") {
         body.classList.toggle("light");
         change_icon();
