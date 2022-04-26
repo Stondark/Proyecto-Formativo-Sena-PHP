@@ -11,17 +11,7 @@ if (menu_close) {
 // INDEX.HTML 
 
 /* Mostrar menú index */
-const nav_menu = document.getElementById("nav-menu"),
-    show_menu = document.getElementById("show-menu"),
-    close_menu = document.getElementById("close-menu");
 
-show_menu.addEventListener("click", () => {
-    nav_menu.classList.toggle("show");
-});
-
-close_menu.addEventListener("click", () => {
-    nav_menu.classList.remove("show");
-});
 
 // PRODUCTOS.PHP 
 const abrir = document.getElementById("abrir-producto");
