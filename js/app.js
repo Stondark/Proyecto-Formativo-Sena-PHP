@@ -95,22 +95,6 @@ if (user) {
         letras = ta.val().replace(/ /g, "");
         ta.val(letras);
     });
-    }
-
-// Saludo login.html
-
-const login = document.getElementById("form-login");
-
-if (login) {
-    var hora = new Date();
-
-    if ((hora.getHours() >= 1) & (hora.getHours() <= 12)) {
-        document.getElementById("date").innerHTML = "<h2> Buenos días</h2>";
-    } else if ((hora.getHours() > 12) & (hora.getHours() <= 18)) {
-        document.getElementById("date").innerHTML = "<h2> Buenas tardes</h2>";
-    } else {
-        document.getElementById("date").innerHTML = "<h2> Buenas noches</h2>";
-    }
 }
 
 /* USERS.PHP */
