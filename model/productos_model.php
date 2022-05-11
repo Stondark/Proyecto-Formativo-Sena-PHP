@@ -1,5 +1,5 @@
 <?php
-    require("../config/db.php");
+    require_once("../config/db.php");
     class Producto extends Conexion{
         public function get_producto(){
             parent::conectar();
@@ -64,7 +64,6 @@
             $consulta = $this->conexion->prepare($sql);
             $consulta->execute();
             $resultado = $consulta->rowCount();
-            //var_dump($resultado);
             return $resultado;
 
         }

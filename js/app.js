@@ -1,9 +1,11 @@
 // FUNCIONES PARA CHECKEAR EL MODO EN CADA PÁGINA
 var body = document.documentElement;
+var nav = document.getElementById("nav");
 
 function check_theme() { // ACÁ VALIDAMOS EL MODO
     if (localStorage.getItem("light-mode") === "true") {
         body.classList.toggle("light");
+        nav.classList.toggle("light");
     }
     else{
         body.classList.remove("light");
@@ -11,19 +13,6 @@ function check_theme() { // ACÁ VALIDAMOS EL MODO
 }
 
 check_theme();
-
-
-/* MOSTRAR CIERRE DE SESIÓN  */
-const menu_close = document.getElementById("menu-close"),
-    user_name = document.getElementById("user-name");
-
-if (menu_close) {
-    user_name.addEventListener("click", () => {
-    menu_close.classList.toggle("show");
-    });
-}
-
-
 
 // PRODUCTOS.PHP 
 const abrir = document.getElementById("abrir-producto");

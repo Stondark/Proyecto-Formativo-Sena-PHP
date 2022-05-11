@@ -1,5 +1,5 @@
 <?php
-    require("../config/db.php");
+    require_once("../config/db.php");
     class Ventas extends Conexion{
         public function get_ventas(){
             parent::conectar();
@@ -78,9 +78,20 @@
             $consulta = $this->conexion->prepare($sql);
             $consulta->execute();
             $resultado = $consulta->rowCount();
-            //var_dump($resultado);
             return $resultado;
-
         }
 
+        public function total_ventas(){
+            parent::conectar();
+            $sql = "SELECT SUM(`total`) FROM ventas WHERE `id_estado` = 1;";
+            $consulta = $this->conexion->prepare($sql);
+            $consulta->execute();
+            $resultado = $consulta->fetchAll(PDO::FETCH_ASSOC);
+            return $resultado[0];
+        }
+
+
+
     }
+
+?>

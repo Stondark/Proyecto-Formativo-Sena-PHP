@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -9,33 +9,47 @@
     <link rel="stylesheet" href="../css/dashboard.css" />
     <title>Dashboard</title>
     <!-- Include nav -->
-    <?php include_once("../includes/nav.php");
-
-    ?>
+    <?php include_once("../includes/nav.php");?>
     
 </head>
-
 <body>
     <div class="container-dashboard">
-        <h1>Dashboard</h1>
-        <div class="div-total-ventas">
-            <span>Total ventas</span>
-            <h1>$ 300000</h1>
-            <i class="fas fa-wallet"></i>
+        <div class="container-cards">
+            <div class="card one">
+                <div class="card-content">
+                    <p><i class="fa-solid fa-cash-register"></i> Recaudo ventas</p>
+                    <p class="digits" id="money_ventas">000.000</p>
+                    <p>Recaudo total</p>
+                </div>
+            </div>
+            <div class="card two">
+                <div class="card-content">
+                    <p><i class="fa-solid fa-basket-shopping"></i> Ventas</p>
+                    <p class="digits" id="total_ventas">00</p>
+                    <p>Ventas totales</p>
+                </div>
+            </div>
+            <div class="card three">
+                <div class="card-content">
+                    <p><i class="fa-solid fa-box"></i> Productos</p>
+                    <p class="digits" id="prod_inv">000</p>
+                    <p>Productos en inventario</p>
+                </div>
+            </div>
         </div>
-        <div class="div-total-compradores">
-            <span>Compradores</span>
-            <h1>25</h1>
-            <i class="fas fa-user"></i>
-        </div>
-        <div class="div-total-productos">
-            <span>Productos en inventario</span>
-            <h1>15</h1>
-            <i class="fas fa-shopping-cart"></i>
+        <div class="container-graphs">
+            <div class="bar-container">
+                <canvas id="barChart"></canvas>
+            </div>
+            <div class="pie-container">
+                <canvas id="pieChart"></canvas>
+            </div>
         </div>
     </div>
     <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="../js/app.js"></script>
+    <script src="../js/dashboard.js"></script>
 </body>
 
 </html>

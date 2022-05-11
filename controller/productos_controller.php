@@ -22,6 +22,14 @@ $producto = new Producto(); // Instancia de la clase Producto
                 $producto->insert_producto($_POST['producto'], $_POST['cantidad'], $_POST['precio_venta']);
             }
             break;
+
+        case "count":
+            $cantidad = $producto->count_productos();
+            $datos = array("count"=> $cantidad);
+            echo json_encode($datos);
+            break;
+
+
         default:
             break;
     }
