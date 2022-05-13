@@ -9,6 +9,10 @@
     <!-- CSS -->
     <link rel="stylesheet" href="../css/productos.css">
     <link rel="stylesheet" href="//cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+    <!-- FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
     <title>Productos</title>
     <!-- Include nav -->
     <?php include_once("../includes/nav.php");
@@ -90,8 +94,6 @@
 -->
     <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
-    <!-- Jquery validation lib-->
-    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>
     <!-- JS -->
     <script src="../js/productos-script.js"></script>
     <script src="../js/app.js"></script>

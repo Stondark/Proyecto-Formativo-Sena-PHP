@@ -9,6 +9,10 @@
     <!-- CSS -->
     <link rel="stylesheet" href="../css/ventas.css">
     <link rel="stylesheet" href="//cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+    <!-- FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
     <title>Ventas</title>
     <!-- Include nav -->
     <?php include_once("../includes/nav.php");

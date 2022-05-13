@@ -6,8 +6,7 @@
             $sql = "SELECT * FROM productos";
             $consulta = $this->conexion->prepare($sql);
             $consulta->execute();
-            $resultado = $consulta->fetchAll(PDO::FETCH_ASSOC);
-            return $resultado;
+            return $consulta->fetchAll(PDO::FETCH_ASSOC);
             //echo json_encode($resultado);
             //var_dump($resultado); // Mostramos el array de la consulta en pantalla
         }
@@ -18,8 +17,7 @@
             $consulta = $this->conexion->prepare($sql);
             $consulta->bindValue(1, $prod_id);
             $consulta->execute();
-            $resultado = $consulta->fetchAll(PDO::FETCH_ASSOC);
-            return $resultado;
+            return $consulta->fetchAll(PDO::FETCH_ASSOC);
         }
 
         public function delete_producto($prod_id){
@@ -28,8 +26,7 @@
             $consulta = $this->conexion->prepare($sql);
             $consulta->bindValue(1, $prod_id);
             $consulta->execute();
-            $resultado = $consulta->fetchAll(PDO::FETCH_ASSOC);
-            return $resultado;
+            return $consulta->fetchAll(PDO::FETCH_ASSOC);
         }
 
         public function insert_producto($prod_nombre, $prod_cantidad, $prod_precio){
@@ -40,8 +37,7 @@
             $consulta->bindValue(2, $prod_cantidad);
             $consulta->bindValue(3, $prod_precio);
             $consulta->execute();
-            $resultado = $consulta->fetchAll(PDO::FETCH_ASSOC);
-            return $resultado;
+            return $consulta->fetchAll(PDO::FETCH_ASSOC);
         }
 
         public function update_producto($prod_id, $prod_nombre, $prod_cantidad, $prod_precio){
@@ -54,8 +50,7 @@
             $consulta->bindValue(1, $prod_precio);
             $consulta->bindValue(1, $prod_id);
             $consulta->execute();
-            $resultado = $consulta->fetchAll(PDO::FETCH_ASSOC);
-            return $resultado;
+            return $consulta->fetchAll(PDO::FETCH_ASSOC);
         }
 
         public function count_productos(){
@@ -63,8 +58,8 @@
             $sql = "SELECT * FROM productos";
             $consulta = $this->conexion->prepare($sql);
             $consulta->execute();
-            $resultado = $consulta->rowCount();
-            return $resultado;
+            return $consulta->rowCount();
+            //return $resultado;
 
         }
 

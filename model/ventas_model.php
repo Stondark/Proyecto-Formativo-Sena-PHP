@@ -6,8 +6,7 @@
             $sql = "SELECT v.id_venta, v.nombre_cliente, v.numero, v.direccion, p.producto, v.cantidad, t.tipo_envio, u.nombre, e.estado, v.total FROM ventas v INNER JOIN productos p ON v.producto = p.id INNER JOIN tipo_envios t ON v.id_tipoenvio = t.id_tipoenvio INNER JOIN usuarios u ON v.id_vendedor = u.id_usuario INNER JOIN estado_envio e ON v.id_estado = e.id_estado;";
             $consulta = $this->conexion->prepare($sql);
             $consulta->execute();
-            $resultado = $consulta->fetchAll(PDO::FETCH_ASSOC);
-            return $resultado;
+            return $consulta->fetchAll(PDO::FETCH_ASSOC);
             //echo json_encode($resultado);
             //var_dump($resultado); // Mostramos el array de la consulta en pantalla
         }
@@ -18,8 +17,7 @@
             $consulta = $this->conexion->prepare($sql);
             $consulta->bindValue(1, $venta_id);
             $consulta->execute();
-            $resultado = $consulta->fetchAll(PDO::FETCH_ASSOC);
-            return $resultado;
+            return $consulta->fetchAll(PDO::FETCH_ASSOC);
         }
 
         public function delete_ventas($venta_id){
@@ -28,8 +26,7 @@
             $consulta = $this->conexion->prepare($sql);
             $consulta->bindValue(1, $venta_id);
             $consulta->execute();
-            $resultado = $consulta->fetchAll(PDO::FETCH_ASSOC);
-            return $resultado;
+            return $consulta->fetchAll(PDO::FETCH_ASSOC);
         }
 
         public function insert_venta($venta_nombre, $venta_numero, $venta_direccion, $venta_fecha, $venta_producto, $venta_cantidad, $venta_envio, $venta_vendedor, $venta_estado, $venta_total){
@@ -47,8 +44,7 @@
             $consulta->bindValue(9, $venta_estado);
             $consulta->bindValue(10, $venta_total);
             $consulta->execute();
-            $resultado = $consulta->fetchAll(PDO::FETCH_ASSOC);
-            return $resultado;
+            return $consulta->fetchAll(PDO::FETCH_ASSOC);
         }
 
         public function update_venta($venta_id, $venta_nombre, $venta_numero, $venta_direccion, $venta_fecha, $venta_producto, $venta_cantidad, $venta_envio, $venta_vendedor, $venta_estado, $venta_total){
@@ -68,8 +64,7 @@
             $consulta->bindValue(10, $venta_total);
             $consulta->bindValue(11, $venta_id);
             $consulta->execute();
-            $resultado = $consulta->fetchAll(PDO::FETCH_ASSOC);
-            return $resultado;
+            return $consulta->fetchAll(PDO::FETCH_ASSOC);
         }
 
         public function count_venta(){
@@ -77,8 +72,8 @@
             $sql = "SELECT * FROM ventas";
             $consulta = $this->conexion->prepare($sql);
             $consulta->execute();
-            $resultado = $consulta->rowCount();
-            return $resultado;
+            return $consulta->rowCount();
+
         }
 
         public function total_ventas(){

@@ -6,7 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="descripción" content="Un dashboard para negocio">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS -->
     <link rel="stylesheet" href="../css/dashboard.css" />
+    <!-- FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
     <title>Dashboard</title>
     <!-- Include nav -->
     <?php include_once("../includes/nav.php");?>
@@ -48,8 +53,8 @@
     </div>
     <!-- JS -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="../js/app.js"></script>
-    <script src="../js/dashboard.js"></script>
+    <script defer src="../js/app.js"></script>
+    <script defer src="../js/dashboard.js"></script>
 </body>
 
 </html>
