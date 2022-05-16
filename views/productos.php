@@ -9,6 +9,7 @@
     <!-- CSS -->
     <link rel="stylesheet" href="../css/productos.css">
     <link rel="stylesheet" href="//cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/1.0.0/css/dataTables.responsive.css">
     <!-- FONT -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -93,8 +94,9 @@
     </div>
 -->
     <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
+    <script type="text/javascript" src="Dependencies/datatables-responsive/js/dataTables.responsive.js"></script>
     <!-- JS -->
+    
     <script src="../js/productos-script.js"></script>
     <script src="../js/app.js"></script>
 </body>

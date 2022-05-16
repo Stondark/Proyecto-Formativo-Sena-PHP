@@ -13,11 +13,12 @@
             try{
                 $this->conexion = new PDO($conexionString,$this->user, $this->password);
                 $this->conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                return $this->conexion;
+
             } catch( PDOException $e){
                 echo "Conexión fallida" . $e;
                 die();
             }
+            return $this->conexion;
         }
     }
 

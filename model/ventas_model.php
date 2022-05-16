@@ -69,11 +69,10 @@
 
         public function count_venta(){
             parent::conectar();
-            $sql = "SELECT * FROM ventas";
+            $sql = "SELECT * FROM ventas WHERE `id_estado` = 1;";
             $consulta = $this->conexion->prepare($sql);
             $consulta->execute();
             return $consulta->rowCount();
-
         }
 
         public function total_ventas(){

@@ -125,6 +125,5 @@ var get_info_edit = function(tbody, table){
 
         modal_abrir();
 
-        //console.log(data);
     });
 }
