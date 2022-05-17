@@ -15,7 +15,7 @@ $(document).ready(function () {
             {data: "cantidad"},
             {data: "precio_venta"},
             {data: null,
-                defaultContent: "<button class='delete' id='delete' value=''><i class='fa-solid fa-trash'></i></button> <button class='edit'><i class='fa-solid fa-pen'></i></button>" ,
+                defaultContent: "<button class='delete' id='delete' value=''><i class='fa-solid fa-trash'></i></button> <button class='edit' id='edit' value=''><i class='fa-solid fa-pen'></i></button>" ,
                 orderable: false,
             }
         ],
@@ -25,7 +25,7 @@ $(document).ready(function () {
 
     get_info_delete("#lista-productos tbody", table); // Función borrar
     form_submit(table); // Función añadir
-    get_info_edit("#lista-productos tbody", table);
+    get_info_edit("#lista-productos tbody", table); // Función editar
 });
 
 // AÑADIR DATOS
@@ -33,13 +33,51 @@ $(document).ready(function () {
 /* Función para añadir datos */
 
 var form_submit = function(table){
-    $("#form-new-producto").submit(function(e){
-        e.preventDefault();
-        var producto_nombre = $("#producto").val();
-        var cantidad = $("#cantidad").val();
-        var precio = $("#precio").val();
+    const btn_add = document.getElementById("abrir-producto");
+    $(btn_add).on("click", function(){
+        Swal.fire({
+            title: 'Añadir nuevo producto',
+            html:' <form id="form-new-producto">' +
+                '<label for="">PRODUCTO</label>'+
+                '<input type="text" id="producto" name="producto" class="swal2-input">'+
+                '<label for="">CANTIDAD</label>'+
+                '<input type="text" id="cantidad" name="cantidad" class="swal2-input" >'+
+                '<label for="">PRECIO</label>'+
+                '<input type="text" id="precio" name="precio" class="swal2-input">'+
+                '</form>',
+            focusConfirm: false,
+            showCloseButton: true,
+            showCancelButton: true,
+            confirmButtonText: 'Guardar',
+            cancelButtonText: 'Cancelar',
+            preConfirm: () => {
+                let prod = document.getElementById('producto').value
+                let cant = document.getElementById('cantidad').value
+                let precio = document.getElementById('precio').value
+                if(!prod || !cant || !precio){
+                    Swal.showValidationMessage("Ingrese valores en los campos vacíos");
+                } else if(isNaN(cant )|| isNaN(precio)){
+                    Swal.showValidationMessage("Ingrese únicamente números");
+                }
+                return true;
+            }
+        }).then((result) =>{
+            if(result.isConfirmed){
+                if(result){
+                    ajax_newprod();
+                    table.ajax.reload();
+                }
+            }
+        })
+    })
+
+    function ajax_newprod(){
+
+        var auxproducto_nombre = Swal.getPopup().querySelector("#producto").value;
+        var producto_nombre = auxproducto_nombre[0].toUpperCase() + auxproducto_nombre.slice(1); // Convertir primer carácter a mayúscula
+        var cantidad = Swal.getPopup().querySelector("#cantidad").value;
+        var precio = Swal.getPopup().querySelector("#precio").value;
         let parametros = { "producto": producto_nombre, "cantidad": cantidad, "precio_venta": precio}
-        console.log(parametros);
         $.ajax({
             data: parametros,
             url: '../controller/productos_controller.php?op=add',
@@ -52,11 +90,80 @@ var form_submit = function(table){
                     background: '#1a203a',
                     color: '#fff',
                 });
-                modal_cerrar();
-                table.ajax.reload();
             }
         })
-    })
+    }
+
+}
+
+// EDITAR DATOS
+
+var get_info_edit = function(tbody, table){
+    $(tbody).on("click", "button.edit", function(){
+        var data = table.row($(this).parents("tr")).data();
+        var id_inputs = $("#lista-productos #edit").val(data.id);
+        var id_producto = data.id;
+        var name_prod = data.producto;
+        Swal.fire({
+            title: 'Editar el producto '  + data.producto,
+            html:` <form id="form-new-producto">
+                <label for="">PRODUCTO</label>
+                <input type="text" id="producto" name="producto" class="swal2-input" value="${data.producto}">
+                <label for="">CANTIDAD</label>
+                <input type="text" id="cantidad" name="cantidad" class="swal2-input" value="${data.cantidad}">
+                <label for="">PRECIO</label>
+                <input type="text" id="precio" name="precio" class="swal2-input" value="${data.precio_venta}">
+                </form>`,
+            focusConfirm: false,
+            showCloseButton: true,
+            showCancelButton: true,
+            confirmButtonText: 'Guardar',
+            cancelButtonText: 'Cancelar',
+            preConfirm: () => {
+                let prod = document.getElementById('producto').value
+                let cant = document.getElementById('cantidad').value
+                let precio = document.getElementById('precio').value
+                if(!prod || !cant || !precio){
+                    Swal.showValidationMessage("Ingrese valores en los campos vacíos");
+                } else if(isNaN(cant )|| isNaN(precio)){
+                    Swal.showValidationMessage("Ingrese únicamente números");
+                }
+                return true;
+            }
+        }).then((result) =>{
+            if(result.isConfirmed){
+                if(result){
+                    ajax_editprod(id_producto, name_prod);
+                    table.ajax.reload();
+                }
+            }
+        })
+
+    });
+
+    function ajax_editprod(id_producto, name_prod) {
+        var auxproducto_nombre = Swal.getPopup().querySelector("#producto").value;
+        var antg_nombre = name_prod;
+        var producto_nombre = auxproducto_nombre[0].toUpperCase() + auxproducto_nombre.slice(1); // Convertir primer carácter a mayúscula
+        var cantidad = Swal.getPopup().querySelector("#cantidad").value;
+        var precio = Swal.getPopup().querySelector("#precio").value;
+        let parametros = { "id": id_producto, "producto": producto_nombre, "cantidad": cantidad, "precio_venta": precio}
+        $.ajax({
+            data: parametros,
+            url: '../controller/productos_controller.php?op=edit',
+            type: 'POST',
+            success: function(){
+                Swal.fire({
+                    title: 'Añadido!',
+                    text: antg_nombre + ' fue editado correctamente',
+                    icon: 'success',
+                    background: '#1a203a',
+                    color: '#fff',
+                });
+            }
+        })
+    }
+
 }
 
 // ELIMINAR DATOS 
@@ -115,15 +222,3 @@ var get_info_delete = function(tbody, table){
 
 // EDITAR DATOS
 
-var get_info_edit = function(tbody, table){
-    $(tbody).on("click", "button.edit", function(){
-        var data = table.row($(this).parents("tr")).data();
-        var id = $("#lista-productos #delete").val(data.id);
-            producto = $("#producto").val(data.producto);
-            cantidad = $("#cantidad").val(data.cantidad);
-            precio = $("#precio").val(data.precio_venta);
-
-        modal_abrir();
-
-    });
-}

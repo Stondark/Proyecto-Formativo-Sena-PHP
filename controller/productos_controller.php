@@ -23,6 +23,12 @@ $producto = new Producto(); // Instancia de la clase Producto
             }
             break;
 
+        case "edit":
+            if(isset($_POST['producto']) & isset($_POST['cantidad']) & isset($_POST['precio_venta']) & isset($_POST['id'])){
+                $producto->update_producto($_POST['id'], $_POST['producto'], $_POST['cantidad'], $_POST['precio_venta']);
+            }   
+            break;         
+
         case "count":
             $cantidad = $producto->count_productos();
             $datos = array("count"=> $cantidad);

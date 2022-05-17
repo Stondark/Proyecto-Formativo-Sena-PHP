@@ -46,9 +46,9 @@
                     WHERE id = ?";
             $consulta = $this->conexion->prepare($sql);
             $consulta->bindValue(1, $prod_nombre);
-            $consulta->bindValue(1, $prod_cantidad);
-            $consulta->bindValue(1, $prod_precio);
-            $consulta->bindValue(1, $prod_id);
+            $consulta->bindValue(2, $prod_cantidad);
+            $consulta->bindValue(3, $prod_precio);
+            $consulta->bindValue(4, $prod_id);
             $consulta->execute();
             return $consulta->fetchAll(PDO::FETCH_ASSOC);
         }

@@ -47,52 +47,6 @@
             </button>
         </div>
     </div>
-    
-    <!-- Modal nuevo producto -->
-
-    <div class="modal-container" id="modal-container">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2>Nuevo producto</h2>
-                <a class="close" id="close">X</a>
-            </div>
-            <div class="modal-form" id="form_productos">
-                <form id="form-new-producto">
-                    <label for="">PRODUCTO</label>
-                    <input type="text" id="producto" name="producto">
-                    <label for="">CANTIDAD</label>
-                    <input type="text" id="cantidad" name="cantidad">
-                    <label for="">PRECIO</label>
-                    <input type="text" id="precio" name="precio">
-                    <button>Añadir</button>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal editar-->
-<!--
-
-    <div class="modal-container" id="modal-container">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2>Editar producto</h2>
-                <a class="close" id="close">X</a>
-            </div>
-            <div class="modal-form" id="form_productos">
-                <form id="form-new-producto">
-                    <label for="">PRODUCTO</label>
-                    <input type="text" id="producto" name="producto">
-                    <label for="">CANTIDAD</label>
-                    <input type="text" id="cantidad" name="cantidad">
-                    <label for="">PRECIO</label>
-                    <input type="text" id="precio" name="precio">
-                    <button>Añadir</button>
-                </form>
-            </div>
-        </div>
-    </div>
--->
     <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="Dependencies/datatables-responsive/js/dataTables.responsive.js"></script>
     <!-- JS -->
