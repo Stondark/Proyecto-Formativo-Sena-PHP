@@ -1,6 +1,5 @@
 $(document).ready(function(){
     info_ajax();
-
     const bargraph = document.getElementById('barChart');
     const myChartBar = new Chart(bargraph, {
         type: 'bar',
@@ -84,7 +83,7 @@ function info_ajax(){
             const cop_money = new Intl.NumberFormat("es-ES",{
                 style: "currency",
                 currency: "COP",
-                minimumFractionDigits: 2
+                minimumFractionDigits: 0
             });
             document.getElementById("prod_inv").innerHTML = res.count_prod;
             document.getElementById("total_ventas").innerHTML = res.count_ventas;

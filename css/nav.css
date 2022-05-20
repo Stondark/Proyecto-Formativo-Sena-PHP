@@ -108,7 +108,7 @@ html {
 
 @media screen and (max-width: 780px){
 
-    .nav a{
+    .nav span{
         display: none;
     }
 

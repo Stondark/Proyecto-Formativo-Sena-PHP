@@ -106,18 +106,14 @@ function validar_campo(expresion, input, campo,txt) {
 
 form_contacto.addEventListener("submit", (e) => {
     e.preventDefault();
-    if (campos) {
-        Swal.fire({
-            icon: 'success',
-            title: '¡Correo enviado!',
-            text: '¡El correo se envió correctamente!',
-        });
-    }else{
+    if (!campos) {
         Swal.fire({
             icon: 'error',
             title: 'Oops...',
             text: '¡Al parecer hay campos incorrectos!',
         });
+    }else{
+        contact_ajax();
     }
 });
 
@@ -130,3 +126,33 @@ text_area.forEach((textarea) => {
     textarea.addEventListener("keyup", validar_form);  
     textarea.addEventListener("blur", validar_form);  
 });
+
+
+// Envío de correo
+
+function contact_ajax(){
+    var subject = document.getElementById("subject").value;
+    var email = document.getElementById("email").value;
+    var phone = document.getElementById("phone").value;
+    var message = document.getElementById("mensaje").value;
+    let parametros = {
+        "subject": subject, "email": email, "phone": phone, "mensaje": message
+    }
+    console.log(parametros);
+
+    $.ajax({
+        type: 'POST',
+        url: "../controller/mail_controller.php?op=contact",
+        data: parametros,
+        success: function(){
+            Swal.fire({
+                icon: 'success',
+                title: 'Enviado',
+                text: "Se envió correctamente el correo",
+            });
+            form_contacto.reset();
+            document.getElementById("send-button").disabled = true;
+        }
+    })
+}
+

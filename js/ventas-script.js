@@ -44,12 +44,6 @@ $(document).ready(function () {
     get_info_delete("#lista-ventas tbody", table);
 });
 
-/* 
-
-
-
-
-
 
 /* Función para el botón eliminar */
 var get_info_delete = function(tbody, table){

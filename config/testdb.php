@@ -10,8 +10,15 @@
 
 <body>
     <?php
+
+    use PHPMailer\PHPMailer\clsMail;
+
     require("../model/productos_model.php");
-    
+    require_once("../model/mail_model.php");
+
+    $mail = new clsMail;
+
+    $mail->enviar();
     /*$producto = new Producto;
     $producto->get_producto();*/
 

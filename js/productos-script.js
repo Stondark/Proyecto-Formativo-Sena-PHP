@@ -24,7 +24,7 @@ $(document).ready(function () {
     });
 
     get_info_delete("#lista-productos tbody", table); // Función borrar
-    form_submit(table); // Función añadir
+    get_info_submit(table); // Función añadir
     get_info_edit("#lista-productos tbody", table); // Función editar
 });
 
@@ -32,7 +32,7 @@ $(document).ready(function () {
 
 /* Función para añadir datos */
 
-var form_submit = function(table){
+var get_info_submit = function(table){
     const btn_add = document.getElementById("abrir-producto");
     $(btn_add).on("click", function(){
         Swal.fire({
@@ -75,8 +75,8 @@ var form_submit = function(table){
 
         var auxproducto_nombre = Swal.getPopup().querySelector("#producto").value;
         var producto_nombre = auxproducto_nombre[0].toUpperCase() + auxproducto_nombre.slice(1); // Convertir primer carácter a mayúscula
-        var cantidad = Swal.getPopup().querySelector("#cantidad").value;
-        var precio = Swal.getPopup().querySelector("#precio").value;
+        var cantidad = Swal.getPopup().querySelector("#cantidad").value.replace(/\./g, '');
+        var precio = Swal.getPopup().querySelector("#precio").value.replace(/\./g, '');
         let parametros = { "producto": producto_nombre, "cantidad": cantidad, "precio_venta": precio}
         $.ajax({
             data: parametros,
@@ -145,8 +145,8 @@ var get_info_edit = function(tbody, table){
         var auxproducto_nombre = Swal.getPopup().querySelector("#producto").value;
         var antg_nombre = name_prod;
         var producto_nombre = auxproducto_nombre[0].toUpperCase() + auxproducto_nombre.slice(1); // Convertir primer carácter a mayúscula
-        var cantidad = Swal.getPopup().querySelector("#cantidad").value;
-        var precio = Swal.getPopup().querySelector("#precio").value;
+        var cantidad = Swal.getPopup().querySelector("#cantidad").value.replace(/\./g, '');;
+        var precio = Swal.getPopup().querySelector("#precio").value.replace(/\./g, '');
         let parametros = { "id": id_producto, "producto": producto_nombre, "cantidad": cantidad, "precio_venta": precio}
         $.ajax({
             data: parametros,
@@ -220,5 +220,5 @@ var get_info_delete = function(tbody, table){
     });
 };
 
-// EDITAR DATOS
+
 

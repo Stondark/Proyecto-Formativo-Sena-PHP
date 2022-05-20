@@ -35,10 +35,11 @@
 .container-cards{
   display: flex;
   height: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .card{
-  width: 100%;
   height: auto;
   margin: 2rem 1rem 1rem 1rem;
   background-color: aqua;
@@ -83,19 +84,19 @@
 }
 
 .container-graphs{
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   height: 50%;
   margin-top: 5%;
+  justify-items: center;
+  align-items: center;
+  justify-content: center;
 }
 
 .bar-container{
-  display: flex;
-  align-items: center;
   background-color: var(--dark);
   border-radius: 10px;
-  width: 50%;
+  width: 100%;
   height: 100%;
 }
 
@@ -103,8 +104,6 @@
   background-color: var(--dark);
   border-radius: 10px;
   height: 100%;
-  width: 25%;
-  display: flex;
-  align-items: center;
+  width: 50%;
 }
 

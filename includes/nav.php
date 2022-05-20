@@ -19,16 +19,19 @@
         </div>
         <div class="nav-items">
             <ul>
-                <li><i class="fa-solid fa-chart-line"></i><a href="../views/dashboard.php">Dashboard</a></li>
+                <li><a href="../views/dashboard.php"><i class="fa-solid fa-chart-line"></i><span>Dashboard</span></a></li>
             </ul>
             <ul>
-                <li><i class="fa-solid fa-box"></i><a href="../views/productos.php">Productos</a></li>
+                <li><a href="../views/productos.php"><i class="fa-solid fa-box"></i><span>Productos</span></a></li>
             </ul>
             <ul>
-                <li><i class="fa-solid fa-basket-shopping"></i><a href="../views/ventas.php">Ventas</a></li>
+                <li><a href="../views/ventas.php"><i class="fa-solid fa-basket-shopping"></i><span>Ventas</span></a></li>
             </ul>
             <ul>
-                <li><i class="fa-solid fa-users"></i><a href="">Usuarios</a></li>
+                <li><a href="../views/ventas.php"><i class="fa-solid fa-address-book"></i><span>Clientes</span></a></li>
+            </ul>
+            <ul>
+                <li><a href=""><i class="fa-solid fa-users"></i><span>Usuarios</span></a></li>
             </ul>
         </div>
     </div>
