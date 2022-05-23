@@ -38,15 +38,15 @@ class clsMail{
     }
 
 
-    public function enviar(){
-        $this->mail->setFrom('Sexo@gmail.com.com', 'SEXO');
-        $this->mail->addAddress('mairapatarroyo14@gmail.com');     //Add a recipient
+    public function contact_client(string $recipient, string $encabezado, string $mensaje){
+        $this->mail->setFrom('Sexo@gmail.com.com', 'Software Y.D.D.D');
+        $this->mail->addAddress($recipient);     //Add a recipient
         $this->mail->CharSet = "UTF-8";
         //Content
         $this->mail->isHTML(true);                                  //Set email format to HTML
-        $this->mail->Subject = "TE AMO";
-        $this->mail->Body    = "MUCHO MUCHO MUCHO";
-        $this->mail->AltBody = "UWU";
+        $this->mail->Subject = $encabezado;
+        $this->mail->Body    = $mensaje;
+        $this->mail->AltBody = $mensaje;
         return $this->mail->send();
     }
 

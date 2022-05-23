@@ -142,7 +142,7 @@ function contact_ajax(){
 
     $.ajax({
         type: 'POST',
-        url: "../controller/mail_controller.php?op=contact",
+        url: "../controller/mail_controller.php?op=contact_index",
         data: parametros,
         success: function(){
             Swal.fire({

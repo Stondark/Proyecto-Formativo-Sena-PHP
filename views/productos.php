@@ -23,9 +23,16 @@
 <body>
     <!-- Contenedor principal -->
     <div class="container-productos">
-        <h1 class="title">Productos</h1>
+        <div class="container-title">
+            <h1 class="title">Productos</h1>
+        </div>
         <!-- Inicio tabla --->
         <div class="tabla-productos">
+            <div class="button-new">
+                <button id="abrir-producto">
+                    <i class="fa-solid fa-plus"></i> Nuevo producto 
+                </button>
+            </div>
             <table id="lista-productos">
                 <thead>
                     <tr>
@@ -38,19 +45,10 @@
                 </thead>
             </table>
         </div> 
-        <!-- Botón de nuevo producto --->
-        <div class="button-new">
-            <button id="abrir-producto">
-                <a href="#">
-                    Nuevo producto <i class="fa-solid fa-plus"></i>
-                </a>
-            </button>
-        </div>
     </div>
     <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="Dependencies/datatables-responsive/js/dataTables.responsive.js"></script>
     <!-- JS -->
-    
     <script src="../js/productos-script.js"></script>
     <script src="../js/app.js"></script>
 </body>
