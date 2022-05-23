@@ -1,0 +1,146 @@
+.container-principal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: 17%;
+}
+
+.container-title{
+    margin: 1rem;
+}
+
+.title{
+    font-size: bold;
+    color: var(--white);
+}
+
+.button-new{
+    margin: 1rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#abrir-nuevo{
+    padding: 0.5rem;
+    border-radius: 1rem;
+    background: var(--gradient);
+    border: none;
+    color: var(--white);
+    font-weight: bold;
+    cursor: pointer;
+
+}
+
+#form-new-insert{
+    display: grid;
+}
+
+.delete, .edit{
+    background: none;
+    border: none;
+    outline: none;
+} 
+
+.delete:hover, .edit:hover{
+    cursor: pointer;
+}
+
+.delete{
+    color: #EF476F;
+}
+
+.edit{
+    color: #FFD166;
+}
+/* TABLE STYLE */
+
+.dataTables_wrapper .dataTables_length select{
+    border: none !important;
+    font-weight: bold !important;
+    color: var(--white) !important;
+}
+
+table.dataTable tbody th, table.dataTable tbody td{
+    color: var(--white) !important;
+}
+
+#lista-table{
+    border-radius: 1.5rem;
+    background-color: var(--dark);
+}
+
+#lista-table_filter > label > input[type=search]{
+    border: 0;
+    outline: none;
+    border-bottom: 2px var(--orange) solid;
+    color: var(--white);
+}
+
+table.dataTable thead th{
+    color: var(--white);
+    
+}
+
+table.dataTable tbody tr{
+    background-color: rgba(0, 0, 0, 0) !important;
+}
+
+table.dataTable thead th {
+    color: var(--orange);
+}
+
+#lista-table_filter{
+    margin-bottom: 1rem;
+}
+
+#lista-table_length, .dataTables_wrapper, .dataTables_filter{
+    color: var(--white) !important;
+}
+
+#lista-table_info{
+    color: var(--white) !important;
+}
+
+#lista-table_paginate > span > a.paginate_button.current{
+    background: var(--gradient);
+    color: var(--white) !important;
+}
+
+#lista-table_paginate > span > a, #lista-table_next, #lista-table_previous{
+    color: var(--white) !important;
+}
+#lista-table_paginate > span > a:hover, #lista-table_next:hover, #lista-table_previous:hover{
+    background: var(--gradient);
+    transition: 500ms;
+
+}
+
+@media screen and (max-width: 1200px) {
+  .container-principal {
+    margin-left: 23%;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .container-principal {
+    margin-left: 25%;
+  }
+}
+
+@media screen and (max-width: 920px) {
+  .container-principal {
+    margin-left: 27%;
+  }
+}
+
+@media screen and (max-width: 835px) {
+  .container-principal {
+    margin-left: 20%;
+  }
+}
+@media screen and (max-width: 780px) {
+  .container-principal {
+    margin-left: 10%;
+  }
+}

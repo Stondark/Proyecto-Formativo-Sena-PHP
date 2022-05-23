@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    var table = $("#lista-productos").DataTable({ // Inicialización del datatable
+    var table = $("#lista-table").DataTable({ // Inicialización del datatable
         "language": {
             url: "//cdn.datatables.net/plug-ins/1.10.15/i18n/Spanish.json",
         },
@@ -33,11 +33,11 @@ $(document).ready(function () {
 /* Función para añadir datos */
 
 var get_info_submit = function(table){
-    const btn_add = document.getElementById("abrir-producto");
+    const btn_add = document.getElementById("abrir-nuevo");
     $(btn_add).on("click", function(){
         Swal.fire({
             title: 'Añadir nuevo producto',
-            html:' <form id="form-new-producto">' +
+            html:' <form id="form-new-insert">' +
                 '<label for="">PRODUCTO</label>'+
                 '<input type="text" id="producto" name="producto" class="swal2-input">'+
                 '<label for="">CANTIDAD</label>'+

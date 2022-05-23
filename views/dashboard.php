@@ -8,10 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- CSS -->
     <link rel="stylesheet" href="../css/dashboard.css" lazyload/>
-    <!-- FONT -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" lazyload>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin lazyload>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet" lazyload>
+
     <title>Dashboard</title>
     <!-- Include nav -->
     <?php include_once("../includes/nav.php"); ?>

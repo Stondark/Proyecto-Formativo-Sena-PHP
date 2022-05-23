@@ -9,7 +9,9 @@
     <!-- CSS -->
     <link rel="stylesheet" href="../css/table-design.css">
     <link rel="stylesheet" href="//cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
-    <title>Ventas</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/1.0.0/css/dataTables.responsive.css">
+
+    <title>Productos</title>
     <!-- Include nav -->
     <?php include_once("../includes/nav.php");
         
@@ -17,46 +19,36 @@
 </head>
 <body>
     <!-- Contenedor principal -->
-    <div class="container-ventas">
-        <h1 class="title">Ventas</h1>
+    <div class="container-principal">
+        <div class="container-title">
+            <h1 class="title">Clientes</h1>
+        </div>
         <!-- Inicio tabla --->
-        <div class="tabla-ventas">
-            <table id="lista-ventas">
+        <div class="tabla-productos">
+            <div class="button-new">
+                <button id="abrir-nuevo">
+                    <i class="fa-solid fa-plus"></i> Nuevo cliente
+                </button>
+            </div>
+            <table id="lista-table">
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>CLIENTE</th>
+                        <th>NOMBRE</th>
+                        <th>CÉDULA</th>
+                        <th>DIRECCIÓN</th> 
+                        <th>CORREO</th>
                         <th>NÚMERO</th>
-                        <th>DIRECCIÓN</th>
-                        <th>PRODUCTO</th>
-                        <th>CANTIDAD</th>
-                        <th>TIPO ENVIO</th>
-                        <th>VENDEDOR</th>
-                        <th>ESTADO</th>
-                        <th>TOTAL</th>
                         <th><!-- Botones editar y eliminar--></th>
                     </tr>
                 </thead>
             </table>
         </div> 
-        <!-- Botón de nueva venta --->
-        <div class="button-new">
-            <button id="abrir-venta">
-                <a href="#">
-                    Nueva venta <i class="fa-solid fa-plus"></i>
-                </a>
-            </button>
-        </div>
-
-        <!-- Modal nueva venta --->
-        
     </div>
-
-    <!-- DataTables --->
     <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
+    <script type="text/javascript" src="Dependencies/datatables-responsive/js/dataTables.responsive.js"></script>
     <!-- JS -->
-    <script src="../js/ventas-script.js"></script>
+    <script src="../js/productos-script.js"></script>
     <script src="../js/app.js"></script>
 </body>
 

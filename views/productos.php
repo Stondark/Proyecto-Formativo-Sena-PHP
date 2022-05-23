@@ -7,13 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="descripción" content="Una tabla de productos">
     <!-- CSS -->
-    <link rel="stylesheet" href="../css/productos.css">
+    <link rel="stylesheet" href="../css/table-design.css">
     <link rel="stylesheet" href="//cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/1.0.0/css/dataTables.responsive.css">
-    <!-- FONT -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
     <title>Productos</title>
     <!-- Include nav -->
     <?php include_once("../includes/nav.php");
@@ -22,18 +18,18 @@
 </head>
 <body>
     <!-- Contenedor principal -->
-    <div class="container-productos">
+    <div class="container-principal">
         <div class="container-title">
             <h1 class="title">Productos</h1>
         </div>
         <!-- Inicio tabla --->
         <div class="tabla-productos">
             <div class="button-new">
-                <button id="abrir-producto">
+                <button id="abrir-nuevo">
                     <i class="fa-solid fa-plus"></i> Nuevo producto 
                 </button>
             </div>
-            <table id="lista-productos">
+            <table id="lista-table">
                 <thead>
                     <tr>
                         <th>ID</th>
