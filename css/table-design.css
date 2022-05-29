@@ -36,13 +36,17 @@
     display: grid;
 }
 
-.delete, .edit{
+input:disabled{
+  background: lightgrey !important;
+}
+
+.delete, .edit, .whatsapp, .mail{
     background: none;
     border: none;
     outline: none;
 } 
 
-.delete:hover, .edit:hover{
+.delete:hover, .edit:hover, .whatsapp:hover, .mail:hover{
     cursor: pointer;
 }
 
@@ -52,6 +56,14 @@
 
 .edit{
     color: #FFD166;
+}
+
+.whatsapp{
+  color: #06D6A0;
+}
+
+.mail{
+  color: #3FA7D6;
 }
 /* TABLE STYLE */
 

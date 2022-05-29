@@ -20,8 +20,6 @@
     /*$producto = new Producto;
     $producto->get_producto();*/
 
-    $connect = new Conexion;
-    $connect->conectar();
 
 
     ?>

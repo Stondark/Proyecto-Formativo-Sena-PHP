@@ -9,31 +9,20 @@ function check_theme() { // ACÁ VALIDAMOS EL MODO
     }
 }
 
+function load_ajax(text){
+    Swal.fire({
+        title: "Espere...",
+        text: text,
+        icon: 'info',
+    })
+}
+
+
+
+
 check_theme();
 
 /* LOGIN.HTML */
-
-// Evitar espacios login
-const user = document.getElementById("user");
-const password = document.getElementById("password");
-
-if (user) {
-    user.addEventListener("keyup", (e) => {
-        var ta = $("#user");
-        letras = ta.val().replace(/ /g, "");
-        ta.val(letras);
-    });
-
-    password.addEventListener("keyup", (e) => {
-        var ta = $("#password");
-        letras = ta.val().replace(/ /g, "");
-        ta.val(letras);
-    });
-}
-
-/* USERS.PHP */
-
-
 
 
 

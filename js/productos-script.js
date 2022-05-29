@@ -23,9 +23,9 @@ $(document).ready(function () {
 
     });
 
-    get_info_delete("#lista-productos tbody", table); // Función borrar
+    get_info_delete("#lista-table tbody", table); // Función borrar
     get_info_submit(table); // Función añadir
-    get_info_edit("#lista-productos tbody", table); // Función editar
+    get_info_edit("#lista-table tbody", table); // Función editar
 });
 
 // AÑADIR DATOS
@@ -90,7 +90,8 @@ var get_info_submit = function(table){
                     background: '#1a203a',
                     color: '#fff',
                 });
-            }
+            },
+            beforeSend: load_ajax("el producto se está añadiendo"),
         })
     }
 
@@ -101,7 +102,7 @@ var get_info_submit = function(table){
 var get_info_edit = function(tbody, table){
     $(tbody).on("click", "button.edit", function(){
         var data = table.row($(this).parents("tr")).data();
-        var id_inputs = $("#lista-productos #edit").val(data.id);
+        var id_inputs = $("#lista-table #edit").val(data.id);
         var id_producto = data.id;
         var name_prod = data.producto;
         Swal.fire({
@@ -160,7 +161,8 @@ var get_info_edit = function(tbody, table){
                     background: '#1a203a',
                     color: '#fff',
                 });
-            }
+            },
+            beforeSend: load_ajax("el producto se está editando"),
         })
     }
 
@@ -172,7 +174,7 @@ var get_info_edit = function(tbody, table){
 var get_info_delete = function(tbody, table){
     $(tbody).on("click", "button.delete", function(){
         var data = table.row($(this).parents("tr")).data();
-        var producto = $("#lista-productos #delete").val(data.id);
+        var producto = $("#lista-table #delete").val(data.id);
         var id_producto = data.id;
         console.log(id_producto);
         alerta_eliminar(id_producto);
@@ -194,6 +196,7 @@ var get_info_delete = function(tbody, table){
                             color: '#fff',
                     })
                 },
+                beforeSend: load_ajax("el producto se está eliminando"),
             })
         }
 

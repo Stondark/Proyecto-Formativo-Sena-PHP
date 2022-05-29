@@ -152,7 +152,8 @@ function contact_ajax(){
             });
             form_contacto.reset();
             document.getElementById("send-button").disabled = true;
-        }
+        },
+        beforeSend: load_ajax("el correo se está enviando"),
     })
 }
 

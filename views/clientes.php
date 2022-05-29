@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="//cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/1.0.0/css/dataTables.responsive.css">
 
-    <title>Productos</title>
+    <title>Clientes</title>
     <!-- Include nav -->
     <?php include_once("../includes/nav.php");
         
@@ -48,7 +48,7 @@
     <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="Dependencies/datatables-responsive/js/dataTables.responsive.js"></script>
     <!-- JS -->
-    <script src="../js/productos-script.js"></script>
+    <script src="../js/clientes-script.js"></script>
     <script src="../js/app.js"></script>
 </body>
 
