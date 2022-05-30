@@ -256,7 +256,7 @@ var get_info_mail = function(tbody, table){
                 <label for="">ENCABEZADO</label>
                 <input type="text" id="header" name="header" class="swal2-input">
                 <label for="">MENSAJE</label>
-                <input type="text" id="mensaje" name="mensaje" class="swal2-input">
+                <textarea id="mensaje" name="mensaje" class="swal2-input"></textarea>
                 </form>`,
             focusConfirm: false,
             showCloseButton: true,

@@ -107,7 +107,7 @@ var get_info_edit = function(tbody, table){
         var name_prod = data.producto;
         Swal.fire({
             title: 'Editar el producto '  + data.producto,
-            html:` <form id="form-new-producto">
+            html:` <form id="form-new-insert">
                 <label for="">PRODUCTO</label>
                 <input type="text" id="producto" name="producto" class="swal2-input" value="${data.producto}">
                 <label for="">CANTIDAD</label>
