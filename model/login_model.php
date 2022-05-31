@@ -14,18 +14,18 @@
             $consulta->execute();
             $resultado = $consulta->fetchAll(PDO::FETCH_ASSOC);
             if($consulta->rowCount() == 1){
-                foreach($resultado as $valor){
-                    $id_cargo = $valor['id_cargo'];
-                    echo json_encode(array('id_cargo' => $id_cargo));
-                }
-            }else{
+                $resultado = json_encode($resultado);
+                return $resultado;
+            }
+
+
+            // $resultado = json_encode($resultado);
+            // return $resultado;
+            else{
                 echo json_encode(array('error' => true));
             }
         }
-
     }
-
-
 
 
 
