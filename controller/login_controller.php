@@ -6,7 +6,12 @@
 
     $login = new Login();
 
+    $cargo = $login->acesso($usuario,$contrasena);
 
-    $jsonRta = $login->acesso($usuario,$contrasena);
-    echo $jsonRta;
+    if($cargo == "admin"){
+        require '../views/dashboard.php';
+    }elseif ($cargo == "usuario"){
+        require '../views/usuario.html';
+    }
+
 ?>

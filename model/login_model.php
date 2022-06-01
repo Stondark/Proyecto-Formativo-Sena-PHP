@@ -14,15 +14,16 @@
             $consulta->execute();
             $resultado = $consulta->fetchAll(PDO::FETCH_ASSOC);
             if($consulta->rowCount() == 1){
-                $resultado = json_encode($resultado);
-                return $resultado;
+                $fila = $resultado[0];
+                $cargo = $fila["id_cargo"];
+                if($cargo == "1"){
+                    return "admin";
+                }elseif ($cargo == "2"){
+                    return "usuario";
+                }
             }
-
-
-            // $resultado = json_encode($resultado);
-            // return $resultado;
             else{
-                echo json_encode(array('error' => true));
+                return "Usuario no valido";
             }
         }
     }
