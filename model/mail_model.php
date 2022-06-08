@@ -20,7 +20,7 @@ class clsMail{
         $this->mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
         $this->mail->SMTPAuth   = true;                                   //Enable SMTP authentication
         $this->mail->Username   = 'pipegamo55@gmail.com';                     //SMTP username
-        $this->mail->Password   = 'kgmxkjepnfeqaiml';                               //SMTP password
+        $this->mail->Password   = '';                               //SMTP password
         $this->mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
         $this->mail->Port       = 465;     
     }   

@@ -18,8 +18,21 @@
 
     $mail = new clsMail;
     /*$producto = new Producto;
+    
+    
+
     $producto->get_producto();*/
 
+    $exp_reg = '/([3][0,1]|[0-2]\d)-([1][0-2]|[0]\d)-(\d\d\d\d)/';
+    $fecha = "30-06-2022";
+    if(!preg_match($exp_reg, $fecha)){
+        $res = array("error"=> true);
+        echo json_encode($res);
+    } else{
+        echo "Hola";
+    }
+
+    
 
 
     ?>
