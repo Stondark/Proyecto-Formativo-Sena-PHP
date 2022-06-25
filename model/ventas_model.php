@@ -83,4 +83,18 @@
 
         }
 
+//        public function get_invoice($id_venta){
+//            parent::conectar();
+//            $sql = "SELECT * FROM `ventas` WHERE ventas.id_venta = ?;";
+//            $consulta = $this->conexion->prepare($sql);
+//            $consulta->bindValue(1, $id_venta);
+//            $consulta->execute();
+//            $resultado = $consulta->fetchAll(PDO::FETCH_ASSOC);
+//            $total = $resultado [0];
+//            foreach ($total as $item => $valor){
+//                 $fila = $total[$item];
+//            }
+//            return $fila;
+//        }
+
     }

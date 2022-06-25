@@ -16,7 +16,14 @@ $venta = new Ventas();
                 $venta->delete_ventas($_POST['id_venta']);
             }
             break;
-        
+
+        case "invoice":
+            if(isset($_POST['id_venta'])){
+                $datos = $venta->get_invoice($_POST['id_venta']);
+                print_r($datos);
+            }
+            break;
+
         default:
             break;
     }
