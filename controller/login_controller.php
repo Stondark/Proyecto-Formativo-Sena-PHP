@@ -1,23 +1,36 @@
 <?php
     require_once("../model/login_model.php");
+    require_once ("starter_controller.php");
+
 
     $usuario = $_POST['usuario'];
     $contrasena = $_POST['password'];
-    session_start();
+    //instancia de controlador de sesiones
+    $ics = new Starter();
+
 
     $login = new Login();
 
     $cargo = $login->acesso($usuario,$contrasena);
+    $_SESSION['usuario'] = $login->getUsuario();
+    $_SESSION['contrasena'] = $login->getContrasena();
+    $_SESSION['cargo'] = $login->getCargo();
 
-    if($cargo == "admin"){
+
+
+    if($_SESSION['cargo'] == "1"){
         require '../views/dashboard.php';
-    }elseif ($cargo == "usuario"){
+    }elseif ($cargo == "2") {
         require '../views/usuario.html';
     }
 
-    if($usuario == null || $usuario = ''){
-    echo "usuario no ingresado";
-    header("location: ../views/login.php");
+    if(empty($_SESSION['usuario'])){
+        $ics->redirect();
     }
+
+
+
+
+
 
 ?>

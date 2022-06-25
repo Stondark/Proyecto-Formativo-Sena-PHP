@@ -1,9 +1,20 @@
 <?php
-
+require_once("starter_controller.php");
+$ics = new Starter();
+if(empty($_SESSION['usuario'])){
+    $ics->redirect();
+}
 require_once("../model/productos_model.php");
 require_once("../model/ventas_model.php");
+
+
 $producto = new Producto(); // Instancia de la clase Producto
 $ventas = new Ventas();
+
+
+
+
+
 
     $cantidad_productos = $producto->count_productos();
     $cantidad_ventas = $ventas->count_venta();
