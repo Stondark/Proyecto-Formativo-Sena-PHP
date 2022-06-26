@@ -6,7 +6,6 @@
     $usuario = $_POST['usuario'];
     $contrasena = $_POST['password'];
     //instancia de controlador de sesiones
-    $ics = new Starter();
 
 
     $login = new Login();
@@ -24,9 +23,7 @@
         require '../views/usuario.html';
     }
 
-    if(empty($_SESSION['usuario'])){
-        $ics->redirect();
-    }
+
 
 
 
