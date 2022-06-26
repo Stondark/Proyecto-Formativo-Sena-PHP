@@ -1,6 +1,6 @@
 <?php
 require_once ("login_controller.php");
-require_once("starter_controller.php");
+
 $ics = new Starter();
 if (empty($_SESSION['usuario'])) {
     $ics->redirect();
