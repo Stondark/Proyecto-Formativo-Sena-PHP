@@ -1,7 +1,18 @@
 <?php
 
+require_once("starter_controller.php");
+$ics = new Starter();
+if(empty($_SESSION['usuario'])){
+    $ics->redirect();
+}
+
 require_once("../model/productos_model.php");
+
+
+
+
 $producto = new Producto(); // Instancia de la clase Producto
+
 
     switch($_GET["op"]){
         case "listar":
@@ -39,6 +50,9 @@ $producto = new Producto(); // Instancia de la clase Producto
         default:
             break;
     }
+
+
+
 
 
 ?>

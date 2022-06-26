@@ -1,9 +1,12 @@
 <?php
+require_once ("login_controller.php");
 require_once("starter_controller.php");
 $ics = new Starter();
-if(empty($_SESSION['usuario'])){
+if (empty($_SESSION['usuario'])) {
     $ics->redirect();
 }
+
+
 require_once("../model/productos_model.php");
 require_once("../model/ventas_model.php");
 

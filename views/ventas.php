@@ -1,11 +1,13 @@
 <?php
 require_once("../controller/starter_controller.php");
-
+$ics = new Starter();
 if(empty($_SESSION['usuario'])){
-    $ics = new Starter();
     $ics->redirect();
 }
+
 ?>
+
+
 <!DOCTYPE html>
 <html lang="es">
 

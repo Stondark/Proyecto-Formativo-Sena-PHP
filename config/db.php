@@ -3,7 +3,7 @@
     class Conexion{
         
         protected $host = "localhost";
-        protected $db = "crud";
+        protected $db = "nueva";
         protected $user = "root";
         protected $password = "";
         protected $conexion;

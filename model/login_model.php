@@ -30,7 +30,7 @@
             $this->usuario = $usuario;
             $this->contrasena = $contrasena;
             parent::conectar();
-            $sql = "SELECT usuario, contrasena,id_cargo FROM usuarios WHERE usuario = ? AND contrasena =?";
+            $sql = "SELECT nombre_sesion, contrasena,cargo FROM sesiones WHERE nombre_sesion = ? AND contrasena =?";
             $consulta = $this->conexion->prepare($sql);
             $consulta->bindValue(1, $usuario);
             $consulta->bindValue(2, $contrasena);
@@ -38,7 +38,7 @@
             $resultado = $consulta->fetchAll(PDO::FETCH_ASSOC);
             if ($consulta->rowCount() == 1) {
                 $fila = $resultado[0];
-                $cargo = $fila['id_cargo'];
+                $cargo = $fila['cargo'];
                 if($cargo == "1"){
                      $this->cargo = $cargo ;
                 }else{
