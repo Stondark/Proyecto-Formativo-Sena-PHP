@@ -32,7 +32,9 @@ $(document).ready(function () {
             },
             {data: "total"},
             {data: null,
-                defaultContent: "<button class='delete' id='delete' value=''><i class='fa-solid fa-trash'></i></button> <button class='edit'><i class='fa-solid fa-pen'></i></button> <button class='pdf'><i class='fa-solid fa-file-pdf'></i></button>" ,
+                defaultContent: "<button class='delete' id='delete' value=''><i class='fa-solid fa-trash'></i></button> " +
+                    "<button class='edit'><i class='fa-solid fa-pen'></i></button> " +
+                    "<button class='pdf' id='pdf' value=''><i class='fa-solid fa-file-pdf'></i></button>",
                 orderable: false,
             }
         ],
@@ -42,6 +44,7 @@ $(document).ready(function () {
     });
 
     get_info_delete("#lista-ventas tbody", table);
+    get_info_pdf("#lista-ventas tbody", table);
 });
 
 
@@ -95,3 +98,41 @@ var get_info_delete = function(tbody, table){
         }
     });
 };
+
+var get_info_pdf = function (tbody,table){
+    $(tbody).on("click","button.pdf",function () {
+        var data = table.row($(this).parents("tr")).data();
+        var id_venta = data.id_venta;
+        var cliente = data.nombre_cliente;
+        var direccion = data.direccion;
+        var producto = data.producto;
+        alert(producto);
+        var cantidad = data.cantidad;
+        var total = data.total;
+        alert(id_venta);
+        $.post("../views/invoice.php", {idVenta:id_venta,nombreCliente:cliente}, function (data){
+            if(data != null){
+                window.location.href = "../views/invoice.php?idVenta=" + id_venta + "&nombreCliente="+cliente+ "&productoa=" + producto + "&cantidad="+ cantidad +
+                "&total=" + total;
+            }
+        });
+
+
+
+        //peticion ajax para la facturacion
+        // function send_data_invoice(id_venta) {
+        //     let indice = {"id_venta": id_venta}
+        //     $.ajax({
+        //         data: indice,
+        //         url: '../controller/ventas_controller.php?op=invoice',
+        //         type: 'POST',
+        //     }).done(function (data) {
+        //
+        //
+        //         //window.location.href = "../views/invoice.php?consult=" + consult;
+        //
+        //     });
+        // };
+
+    });
+}
