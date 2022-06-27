@@ -16,15 +16,21 @@
     ?>
 </head>
 <body>
-    <!-- Contenedor principal -->
-    <div class="container-ventas">
-        <h1 class="title">Ventas</h1>
+<div class="container-principal">
+        <div class="container-title">
+            <h1 class="title">Productos</h1>
+        </div>
         <!-- Inicio tabla --->
-        <div class="tabla-ventas">
-            <table id="lista-ventas">
+        <div class="tabla-productos">
+            <div class="button-new">
+                <button id="abrir-nuevo">
+                    <i class="fa-solid fa-plus"></i> Nuevo producto 
+                </button>
+            </div>
+            <table id="lista-table">
                 <thead>
                     <tr>
-                        <th>ID</th>
+                    <th>ID</th>
                         <th>CLIENTE</th>
                         <th>NÚMERO</th>
                         <th>DIRECCIÓN</th>
@@ -39,19 +45,7 @@
                 </thead>
             </table>
         </div> 
-        <!-- Botón de nueva venta --->
-        <div class="button-new">
-            <button id="abrir-venta">
-                <a href="#">
-                    Nueva venta <i class="fa-solid fa-plus"></i>
-                </a>
-            </button>
-        </div>
-
-        <!-- Modal nueva venta --->
-        
     </div>
-
     <!-- DataTables --->
     <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
