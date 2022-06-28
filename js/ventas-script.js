@@ -45,6 +45,7 @@ $(document).ready(function () {
 
     get_info_delete("#lista-table tbody", table);
     get_info_pdf("#lista-table tbody", table);
+    get_info_edit("#lista-table tbody", table);
     get_info_submit(table);
 });
 
@@ -246,4 +247,64 @@ var get_info_submit = function(table){
         })
     }
 
+}
+
+// EDITAR VENTA
+
+var get_info_edit = function (tbody,table){
+    $(tbody).on("click", "button.edit", function(){
+        var data = table.row($(this).parents("tr")).data();
+        var id_inputs = $("#lista-table #edit").val(data.id);
+        var id_venta = data.id_venta;
+        var producto = data.producto;
+        var direccion = data.direccion;
+        var numero = data.numero;
+        var cantidad = data.cantidad;
+        var envio = data.envio;
+        var nombre_cliente = data.nombreCliente;
+        var estado = data.estado;
+        var nombre = data.nombre;
+        Swal.fire({
+            title: 'Editar el venta '  + data.nombre,
+            html:` <form id="form-new-insert">
+                <label for="">NOMBRE CLIENTE</label>
+                <input type="text" id="nombre_cliente" name="nombre_cliente" class="swal2-input" value="${data.nombreCliente}">
+                <label for="">DIRECCION</label>
+                <input type="text" id="direccion" name="direccion" class="swal2-input" value="${data.direccion}">
+                <label for="">NUMERO</label>
+                <input type="text" id="numero" name="numero" class="swal2-input" value="${data.numero}">
+                <label for="">ESTADO</label>
+                <input type="text" id="estado" name="estado" class="swal2-input" value="${data.estado}">
+                <label for="">NOMBRE</label>
+                <input type="text" id="nombre" name="nombre" class="swal2-input" value="${data.nombre}">
+                </form>`,
+            focusConfirm: false,
+            showCloseButton: true,
+            showCancelButton: true,
+            confirmButtonText: 'Guardar',
+            cancelButtonText: 'Cancelar',
+            preConfirm: () => {
+                let nombclient = document.getElementById('nombre_cliente').value
+                let direcc = document.getElementById('direccion').value
+                let num = document.getElementById('numero').value
+                let est = document.getElementById('estado').value
+                let nomb = document.getElementById('nombre').value
+                if(!nombclient || !direcc || !num || !est || !nomb){
+                    Swal.showValidationMessage("Ingrese valores en los campos vacíos");
+                } else if(isNaN(num)){
+                    Swal.showValidationMessage("Ingrese únicamente números");
+                }
+                return true;
+            }
+        }).then((result) =>{
+            if(result.isConfirmed){
+                if(result){
+                    ajax_editprod(id_venta, nombre_cliente);
+                    table.ajax.reload();
+                }
+            }
+        });
+
+    })
+    
 }

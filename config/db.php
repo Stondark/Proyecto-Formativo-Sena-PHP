@@ -3,9 +3,9 @@
     class Conexion{
         
         protected $host = "localhost";
-        protected $db = "crud_4";
+        protected $db = "new";
         protected $user = "root";
-        protected $password = "12345";
+        protected $password = "";
         protected $conexion;
 
         public function conectar(){
