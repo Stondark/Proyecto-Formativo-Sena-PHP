@@ -163,20 +163,20 @@ var get_info_submit = function(table){
                 '<label for="">DIRECCIÓN</label>'+
                 '<input type="text" id="direccion" name="direccion" class="swal2-input">'+
 
-                '<select class="swal2-input" id="select_list"></select>'+
+                '<select class="swal2-select" id="select_list"></select>'+
 
                 '<label for="">CANTIDAD</label>'+
                 '<input type="text" id="cantidad" name="cantidad" class="swal2-input">'+
 
-                '<select class="swal2-input" id="vendedores_list"></select>'+
+                '<select class="swal2-select" id="vendedores_list"></select>'+
 
-                '<select class="swal2-input" id="envio">'+
+                '<select class="swal2-select" id="envio">'+
                 '<option value="1">Contraentrega</option>'+
                 '<option value="2">Almacén</option>'+
                 '<option value="3">Interrapidísimo</option>'+
                 '</select>'+
                 
-                '<select class="swal2-input" id="estado">'+
+                '<select class="swal2-select" id="estado">'+
                 '<option value="1">Entregado</option>'+
                 '<option value="2">Cancelado</option>'+
                 '<option value="3">En proceso</option>'+
@@ -254,6 +254,7 @@ var get_info_submit = function(table){
 var get_info_edit = function (tbody,table){
     $(tbody).on("click", "button.edit", function(){
         var data = table.row($(this).parents("tr")).data();
+        console.log(data)
         var id_inputs = $("#lista-table #edit").val(data.id);
         var id_venta = data.id_venta;
         var producto = data.producto;
@@ -261,14 +262,14 @@ var get_info_edit = function (tbody,table){
         var numero = data.numero;
         var cantidad = data.cantidad;
         var envio = data.envio;
-        var nombre_cliente = data.nombreCliente;
+        var nombre_cliente = data.nombre_cliente;
         var estado = data.estado;
         var nombre = data.nombre;
         Swal.fire({
-            title: 'Editar el venta '  + data.nombre,
+            title: 'Editar la venta '  + data.nombre,
             html:` <form id="form-new-insert">
                 <label for="">NOMBRE CLIENTE</label>
-                <input type="text" id="nombre_cliente" name="nombre_cliente" class="swal2-input" value="${data.nombreCliente}">
+                <input type="text" id="nombre_cliente" name="nombre_cliente" class="swal2-input" value="${data.nombre_cliente}">
                 <label for="">DIRECCION</label>
                 <input type="text" id="direccion" name="direccion" class="swal2-input" value="${data.direccion}">
                 <label for="">NUMERO</label>

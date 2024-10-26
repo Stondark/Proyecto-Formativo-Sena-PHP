@@ -11,9 +11,6 @@ $ventas = new Ventas();
 
 
 
-
-
-
     $cantidad_productos = $producto->count_productos();
     $cantidad_ventas = $ventas->count_venta();
     $total_ventas = $ventas->total_ventas();

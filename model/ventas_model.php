@@ -76,7 +76,7 @@
 
         public function count_venta(){
             parent::conectar();
-            $sql = "SELECT * FROM ventas WHERE `id_estado` = 1;";
+            $sql = "SELECT * FROM ventas";
             $consulta = $this->conexion->prepare($sql);
             $consulta->execute();
             return $consulta->rowCount();
@@ -84,7 +84,7 @@
 
         public function total_ventas(){
             parent::conectar();
-            $sql = "SELECT SUM(`total`) FROM ventas WHERE `id_estado` = 1;";
+            $sql = "SELECT SUM(`total`) FROM ventas";
             $consulta = $this->conexion->prepare($sql);
             $consulta->execute();
             $resultado = $consulta->fetchAll(PDO::FETCH_ASSOC);

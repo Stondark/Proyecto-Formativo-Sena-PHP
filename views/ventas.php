@@ -18,13 +18,13 @@
 <body>
 <div class="container-principal">
         <div class="container-title">
-            <h1 class="title">Productos</h1>
+            <h1 class="title">Ventas</h1>
         </div>
         <!-- Inicio tabla --->
         <div class="tabla-productos">
             <div class="button-new">
                 <button id="abrir-nuevo">
-                    <i class="fa-solid fa-plus"></i> Nuevo producto 
+                    <i class="fa-solid fa-plus"></i> Nueva venta 
                 </button>
             </div>
             <table id="lista-table">
